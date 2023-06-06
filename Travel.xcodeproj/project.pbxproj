@@ -13,6 +13,7 @@
 		720451D22A2FA577002A8A0E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720451D12A2FA577002A8A0E /* Preview Assets.xcassets */; };
 		720451D42A2FA577002A8A0E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720451D32A2FA577002A8A0E /* Persistence.swift */; };
 		720451D72A2FA577002A8A0E /* Travel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 720451D52A2FA577002A8A0E /* Travel.xcdatamodeld */; };
+		720451DE2A2FA5BC002A8A0E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720451DD2A2FA5BC002A8A0E /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		720451D12A2FA577002A8A0E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		720451D32A2FA577002A8A0E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		720451D62A2FA577002A8A0E /* Travel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Travel.xcdatamodel; sourceTree = "<group>"; };
+		720451DD2A2FA5BC002A8A0E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				720451CA2A2FA576002A8A0E /* TravelApp.swift */,
 				720451CC2A2FA576002A8A0E /* ContentView.swift */,
+				720451DD2A2FA5BC002A8A0E /* MainView.swift */,
 				720451CE2A2FA577002A8A0E /* Assets.xcassets */,
 				720451D32A2FA577002A8A0E /* Persistence.swift */,
 				720451D52A2FA577002A8A0E /* Travel.xcdatamodeld */,
@@ -146,6 +149,7 @@
 				720451D42A2FA577002A8A0E /* Persistence.swift in Sources */,
 				720451D72A2FA577002A8A0E /* Travel.xcdatamodeld in Sources */,
 				720451CD2A2FA576002A8A0E /* ContentView.swift in Sources */,
+				720451DE2A2FA5BC002A8A0E /* MainView.swift in Sources */,
 				720451CB2A2FA576002A8A0E /* TravelApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
