@@ -17,6 +17,7 @@ struct MainView: View {
                 }
 
             MapView()
+                .environmentObject(LocalSearchService())
                 .tabItem {
                     Image(systemName: "location.fill")
                     Text("Trip")

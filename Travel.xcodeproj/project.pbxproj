@@ -17,6 +17,11 @@
 		720451E22A3050F3002A8A0E /* NewTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720451E12A3050F3002A8A0E /* NewTripView.swift */; };
 		720451E62A305158002A8A0E /* EditTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720451E52A305158002A8A0E /* EditTripView.swift */; };
 		720451E82A305FBF002A8A0E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720451E72A305FBF002A8A0E /* HomeView.swift */; };
+		72E9F40C2A30E2E500375A63 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E9F40B2A30E2E500375A63 /* LocationManager.swift */; };
+		72E9F40F2A30EFD500375A63 /* MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E9F40E2A30EFD500375A63 /* MKCoordinateRegion+Extensions.swift */; };
+		72E9F4112A30F5AA00375A63 /* LocalSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E9F4102A30F5AA00375A63 /* LocalSearchService.swift */; };
+		72E9F4142A30F7F900375A63 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E9F4132A30F7F900375A63 /* Landmark.swift */; };
+		72E9F4192A31058600375A63 /* LandmarkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E9F4182A31058600375A63 /* LandmarkListView.swift */; };
 		72F7E9932A3079DE007EC0FA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F7E9922A3079DE007EC0FA /* MapView.swift */; };
 		72F7E9952A307A1F007EC0FA /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F7E9942A307A1F007EC0FA /* InfoView.swift */; };
 		72F7E9972A307A65007EC0FA /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F7E9962A307A65007EC0FA /* FriendView.swift */; };
@@ -34,6 +39,12 @@
 		720451E12A3050F3002A8A0E /* NewTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripView.swift; sourceTree = "<group>"; };
 		720451E52A305158002A8A0E /* EditTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripView.swift; sourceTree = "<group>"; };
 		720451E72A305FBF002A8A0E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		72E9F4062A30DCB400375A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72E9F40B2A30E2E500375A63 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		72E9F40E2A30EFD500375A63 /* MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
+		72E9F4102A30F5AA00375A63 /* LocalSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchService.swift; sourceTree = "<group>"; };
+		72E9F4132A30F7F900375A63 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
+		72E9F4182A31058600375A63 /* LandmarkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkListView.swift; sourceTree = "<group>"; };
 		72F7E9922A3079DE007EC0FA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		72F7E9942A307A1F007EC0FA /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		72F7E9962A307A65007EC0FA /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
@@ -69,19 +80,18 @@
 		720451C92A2FA576002A8A0E /* Travel */ = {
 			isa = PBXGroup;
 			children = (
+				72E9F4152A31046A00375A63 /* Views */,
+				72E9F4122A30F7E000375A63 /* Models */,
+				72E9F4062A30DCB400375A63 /* Info.plist */,
 				720451CA2A2FA576002A8A0E /* TravelApp.swift */,
 				720451CC2A2FA576002A8A0E /* ContentView.swift */,
 				720451CE2A2FA577002A8A0E /* Assets.xcassets */,
 				720451D32A2FA577002A8A0E /* Persistence.swift */,
 				720451D52A2FA577002A8A0E /* Travel.xcdatamodeld */,
 				720451D02A2FA577002A8A0E /* Preview Content */,
-				720451DD2A2FA5BC002A8A0E /* MainView.swift */,
-				720451E72A305FBF002A8A0E /* HomeView.swift */,
-				72F7E9922A3079DE007EC0FA /* MapView.swift */,
-				72F7E9962A307A65007EC0FA /* FriendView.swift */,
-				72F7E9942A307A1F007EC0FA /* InfoView.swift */,
-				720451E12A3050F3002A8A0E /* NewTripView.swift */,
-				720451E52A305158002A8A0E /* EditTripView.swift */,
+				72E9F40D2A30EF7D00375A63 /* Extensions */,
+				72E9F4082A30E28200375A63 /* Managers */,
+				72E9F4072A30E26A00375A63 /* Services */,
 			);
 			path = Travel;
 			sourceTree = "<group>";
@@ -92,6 +102,53 @@
 				720451D12A2FA577002A8A0E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		72E9F4072A30E26A00375A63 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				72E9F4102A30F5AA00375A63 /* LocalSearchService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		72E9F4082A30E28200375A63 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				72E9F40B2A30E2E500375A63 /* LocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		72E9F40D2A30EF7D00375A63 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				72E9F40E2A30EFD500375A63 /* MKCoordinateRegion+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		72E9F4122A30F7E000375A63 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				72E9F4132A30F7F900375A63 /* Landmark.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		72E9F4152A31046A00375A63 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				720451DD2A2FA5BC002A8A0E /* MainView.swift */,
+				720451E72A305FBF002A8A0E /* HomeView.swift */,
+				72F7E9922A3079DE007EC0FA /* MapView.swift */,
+				72F7E9962A307A65007EC0FA /* FriendView.swift */,
+				72F7E9942A307A1F007EC0FA /* InfoView.swift */,
+				720451E12A3050F3002A8A0E /* NewTripView.swift */,
+				720451E52A305158002A8A0E /* EditTripView.swift */,
+				72E9F4182A31058600375A63 /* LandmarkListView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,15 +223,20 @@
 			files = (
 				720451E62A305158002A8A0E /* EditTripView.swift in Sources */,
 				720451E22A3050F3002A8A0E /* NewTripView.swift in Sources */,
+				72E9F4192A31058600375A63 /* LandmarkListView.swift in Sources */,
 				720451D42A2FA577002A8A0E /* Persistence.swift in Sources */,
+				72E9F40F2A30EFD500375A63 /* MKCoordinateRegion+Extensions.swift in Sources */,
 				720451D72A2FA577002A8A0E /* Travel.xcdatamodeld in Sources */,
 				720451CD2A2FA576002A8A0E /* ContentView.swift in Sources */,
 				720451E82A305FBF002A8A0E /* HomeView.swift in Sources */,
 				720451DE2A2FA5BC002A8A0E /* MainView.swift in Sources */,
 				72F7E9932A3079DE007EC0FA /* MapView.swift in Sources */,
+				72E9F40C2A30E2E500375A63 /* LocationManager.swift in Sources */,
 				72F7E9952A307A1F007EC0FA /* InfoView.swift in Sources */,
+				72E9F4112A30F5AA00375A63 /* LocalSearchService.swift in Sources */,
 				72F7E9972A307A65007EC0FA /* FriendView.swift in Sources */,
 				720451CB2A2FA576002A8A0E /* TravelApp.swift in Sources */,
+				72E9F4142A30F7F900375A63 /* Landmark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +368,9 @@
 				DEVELOPMENT_TEAM = 6ULV77C4SH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Travel/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires your location when using";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -334,6 +399,9 @@
 				DEVELOPMENT_TEAM = 6ULV77C4SH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Travel/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires your location when using";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
