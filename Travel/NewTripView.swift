@@ -18,6 +18,13 @@ struct NewTripView: View {
                     Spacer()
             }
             .padding(.top, 30)
+            VStack {
+                Text("Trip Name")
+                    .font(Font.system(size: 20))
+                    .fontWeight(.regular)
+                    .multilineTextAlignment(.leading)
+            }
+            .padding(10)
             Spacer()
         }
         
