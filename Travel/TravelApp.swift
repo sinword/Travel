@@ -25,8 +25,9 @@ struct TravelApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(UserSettings())
         }
     }
     

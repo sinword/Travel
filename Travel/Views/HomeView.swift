@@ -12,6 +12,7 @@ struct HomeView: View {
     static let lemonGreen = Color("ThemeGreen")
     @State var showDetail = false
     
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
