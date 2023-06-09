@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
+    @State var isLogin = false
+    
     var body: some View {
         TabView {
             HomeView()
