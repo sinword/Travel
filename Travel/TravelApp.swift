@@ -20,6 +20,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct TravelApp: App {
     init(){
         FirebaseApp.configure()
+        /*
         let settings = Firestore.firestore().settings
         settings.host = "localhost:4400"
         settings.isPersistenceEnabled = false
@@ -28,17 +29,19 @@ struct TravelApp: App {
         
         Auth.auth().useEmulator(withHost: "localhost", port: 9099)
         Storage.storage().useEmulator(withHost: "localhost", port: 9199)
+         */
     }
     
     let persistenceController = PersistenceController.shared
+    
     @Environment(\.scenePhase) var scenePhase
-    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
+        
     var body: some Scene {
         WindowGroup {
             MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(AuthModel())
         }
     }
     
