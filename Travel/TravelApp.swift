@@ -10,11 +10,14 @@ import SwiftUI
 struct TravelApp: App {
     let persistenceController = PersistenceController.shared
     @Environment(\.scenePhase) var scenePhase
+    @EnvironmentObject var localSearchService: LocalSearchService
     
     var body: some Scene {
         WindowGroup {
             MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(LocalSearchService())
+                .environmentObject(LandmarkManager())
         }
     }
     

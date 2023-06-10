@@ -8,18 +8,21 @@
 import Foundation
 import MapKit
 import Combine
+import CoreLocation
 
+@MainActor
 class LocalSearchService: ObservableObject {
     @Published var region: MKCoordinateRegion = MKCoordinateRegion.defaultRegion()
     let locationManager = LocationManager()
     var cancellables = Set<AnyCancellable>()
     @Published var landmarks: [Landmark] = []
     @Published var landmark: Landmark? // It will be null sometimes
+    
     init() {
         locationManager.$region.assign(to: \.region, on: self)
             .store(in: &cancellables)
     }
-    
+
     func search(query: String) {
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = query
@@ -29,11 +32,31 @@ class LocalSearchService: ObservableObject {
         search.start { response, error in
             if let response = response {
                 let mapItems = response.mapItems
+                let sourceLocation = self.getCenterLocation(from: self.locationManager.region)
                 self.landmarks = mapItems.map {
-                    Landmark(placemark: $0.placemark)
+                    let destinationLocation = CLLocation(latitude: $0.placemark.coordinate.latitude, longitude: $0.placemark.coordinate.longitude)
+                    let distance = self.calculateDistance(from: sourceLocation, to: destinationLocation)
+                    return Landmark(placemark: $0.placemark, distance: distance)
                 }
+            }
+            self.landmarks.sort { (landmark1, landmark2) -> Bool in
+                return landmark1.distance < landmark2.distance
             }
         }
     }
 
+    func clear() {
+        locationManager.$region.assign(to: \.region, on: self)
+            .store(in: &cancellables)
+        landmarks.removeAll()
+    }
+    func getCenterLocation(from region: MKCoordinateRegion) -> CLLocation {
+        let centerCoordinate = region.center
+        return CLLocation(latitude: centerCoordinate.latitude, longitude: centerCoordinate.longitude)
+    }
+    
+    func calculateDistance(from source: CLLocation, to destination: CLLocation) -> CLLocationDistance {
+        return source.distance(from: destination)
+    }
+    
 }
