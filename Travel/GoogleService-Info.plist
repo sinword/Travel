@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:841581401870:ios:53a1950a9eed00410ae95f</string>
+	<string>1:841581401870:ios:36abd492fe32646f0ae95f</string>
+	<key>DATABASE_URL</key>
+	<string>https://travel-63e91-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

@@ -6,18 +6,30 @@
 //
 import SwiftUI
 import Firebase
+import FirebaseStorage
 import FirebaseCore
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
     return true
   }
 }
 
 @main
 struct TravelApp: App {
+    init(){
+        FirebaseApp.configure()
+        let settings = Firestore.firestore().settings
+        settings.host = "localhost:4400"
+        settings.isPersistenceEnabled = false
+        settings.isSSLEnabled = false
+        Firestore.firestore().settings = settings
+        
+        Auth.auth().useEmulator(withHost: "localhost", port: 9099)
+        Storage.storage().useEmulator(withHost: "localhost", port: 9199)
+    }
+    
     let persistenceController = PersistenceController.shared
     @Environment(\.scenePhase) var scenePhase
     
@@ -27,7 +39,6 @@ struct TravelApp: App {
         WindowGroup {
             MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .environmentObject(UserSettings())
         }
     }
     

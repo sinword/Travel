@@ -16,35 +16,26 @@ prefix func ! (value: Binding<Bool>) -> Binding<Bool> {
 }
 
 struct MainView: View {
-    @EnvironmentObject var user: UserSettings
-    
     var body: some View {
         TabView {
             HomeView()
-                .environmentObject(user)
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }
-                .fullScreenCover(isPresented: !$user.isLogin){
-                    LoginView().environmentObject(user)
-               }
             MapView()
-                .environmentObject(LocalSearchService())
                 .tabItem {
                     Image(systemName: "location.fill")
                     Text("Trip")
                 }
 
             FriendView()
-                .environmentObject(user)
                 .tabItem {
                     Image(systemName: "person.2.fill")
                     Text("People")
                 }
 
             InfoView()
-                .environmentObject(user)
                 .tabItem {
                     Image(systemName: "person.crop.circle")
                     Text("Me")
@@ -54,10 +45,8 @@ struct MainView: View {
 }
 
 
-let user = UserSettings()
-
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView().environmentObject(user)
+        MainView()
     }
 }

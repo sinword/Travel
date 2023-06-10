@@ -9,7 +9,6 @@ import SwiftUI
 import Firebase
 
 struct InfoView: View {
-    @EnvironmentObject var user: UserSettings
     
     var body: some View {
         NavigationStack(){
@@ -30,7 +29,6 @@ struct InfoView: View {
     func logout(){
         do {
             try Auth.auth().signOut()
-            user.isLogin = false
             print("Log out!")
         }
         catch { print("already logged out") }
