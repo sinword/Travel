@@ -17,11 +17,13 @@ prefix func ! (value: Binding<Bool>) -> Binding<Bool> {
 
 struct MainView: View {
     @EnvironmentObject var authModel: AuthModel
+    @EnvironmentObject var tripManager: TripManager
     
     var body: some View {
         if authModel.isLogin{
             TabView {
                 HomeView()
+                    .environmentObject(TripManager())
                     .tabItem {
                         Image(systemName: "house.fill")
                         Text("Home")

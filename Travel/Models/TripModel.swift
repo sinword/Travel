@@ -9,7 +9,8 @@ import Foundation
 import Firebase
 import FirebaseStorage
 
-class TripModel: ObservableObject {
+class TripModel: ObservableObject, Identifiable {
+    let id: UUID = UUID()
     @Published var name: String
     @Published var time: Date
     // var member
@@ -25,6 +26,12 @@ class TripModel: ObservableObject {
         self.name = name
         self.time = time
         self.destination.update(newLandmark: destination)
+    }
+    
+    func update(trip: TripModel) {
+        self.name = trip.name
+        self.time = trip.time
+        self.destination.update(newLandmark: trip.destination.landmark)
     }
     
     func printInfo() {

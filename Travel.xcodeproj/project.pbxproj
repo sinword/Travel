@@ -40,6 +40,9 @@
 		7258E0302A3323AC00CCF163 /* BoolEnvironmentVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7258E02F2A3323AC00CCF163 /* BoolEnvironmentVariable.swift */; };
 		7258E0322A3397D700CCF163 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7258E0312A3397D700CCF163 /* TimeManager.swift */; };
 		728A08642A36176F0015EAB7 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A08632A36176F0015EAB7 /* TripModel.swift */; };
+		728A08662A362FB30015EAB7 /* TripManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A08652A362FB30015EAB7 /* TripManager.swift */; };
+		728A086C2A3656430015EAB7 /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A086B2A3656430015EAB7 /* TripListView.swift */; };
+		728A086E2A3666D30015EAB7 /* EditMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A086D2A3666D30015EAB7 /* EditMapView.swift */; };
 		72E9F40C2A30E2E500375A63 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E9F40B2A30E2E500375A63 /* LocationManager.swift */; };
 		72E9F40F2A30EFD500375A63 /* MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E9F40E2A30EFD500375A63 /* MKCoordinateRegion+Extensions.swift */; };
 		72E9F4112A30F5AA00375A63 /* LocalSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E9F4102A30F5AA00375A63 /* LocalSearchService.swift */; };
@@ -74,6 +77,9 @@
 		7258E02F2A3323AC00CCF163 /* BoolEnvironmentVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolEnvironmentVariable.swift; sourceTree = "<group>"; };
 		7258E0312A3397D700CCF163 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		728A08632A36176F0015EAB7 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
+		728A08652A362FB30015EAB7 /* TripManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManager.swift; sourceTree = "<group>"; };
+		728A086B2A3656430015EAB7 /* TripListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripListView.swift; sourceTree = "<group>"; };
+		728A086D2A3666D30015EAB7 /* EditMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMapView.swift; sourceTree = "<group>"; };
 		72E9F4062A30DCB400375A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72E9F40B2A30E2E500375A63 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		72E9F40E2A30EFD500375A63 /* MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
@@ -173,6 +179,7 @@
 				72E9F40B2A30E2E500375A63 /* LocationManager.swift */,
 				723E3C492A32488800FC6649 /* LandmarkManager.swift */,
 				7258E0312A3397D700CCF163 /* TimeManager.swift */,
+				728A08652A362FB30015EAB7 /* TripManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -210,9 +217,11 @@
 				72F7E9942A307A1F007EC0FA /* InfoView.swift */,
 				720451E12A3050F3002A8A0E /* NewTripView.swift */,
 				720451E52A305158002A8A0E /* EditTripView.swift */,
+				728A086B2A3656430015EAB7 /* TripListView.swift */,
 				72E9F4182A31058600375A63 /* LandmarkListView.swift */,
 				1335A3C22A31E3C200052537 /* LoginView.swift */,
 				1335A3C42A321C8600052537 /* RegisterView.swift */,
+				728A086D2A3666D30015EAB7 /* EditMapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -315,6 +324,7 @@
 				72E9F40F2A30EFD500375A63 /* MKCoordinateRegion+Extensions.swift in Sources */,
 				7258E0302A3323AC00CCF163 /* BoolEnvironmentVariable.swift in Sources */,
 				132D0CF02A35CFCD0055D69F /* FriendModel.swift in Sources */,
+				728A086E2A3666D30015EAB7 /* EditMapView.swift in Sources */,
 				723E3C4A2A32488800FC6649 /* LandmarkManager.swift in Sources */,
 				7258E0322A3397D700CCF163 /* TimeManager.swift in Sources */,
 				720451D72A2FA577002A8A0E /* Travel.xcdatamodeld in Sources */,
@@ -323,11 +333,13 @@
 				13051D242A343D1E0090FE60 /* AuthModel.swift in Sources */,
 				720451E82A305FBF002A8A0E /* HomeView.swift in Sources */,
 				720451DE2A2FA5BC002A8A0E /* MainView.swift in Sources */,
+				728A086C2A3656430015EAB7 /* TripListView.swift in Sources */,
 				72F7E9932A3079DE007EC0FA /* MapView.swift in Sources */,
 				72E9F40C2A30E2E500375A63 /* LocationManager.swift in Sources */,
 				1335A3C32A31E3C200052537 /* LoginView.swift in Sources */,
 				72F7E9952A307A1F007EC0FA /* InfoView.swift in Sources */,
 				72E9F4112A30F5AA00375A63 /* LocalSearchService.swift in Sources */,
+				728A08662A362FB30015EAB7 /* TripManager.swift in Sources */,
 				72F7E9972A307A65007EC0FA /* FriendView.swift in Sources */,
 				720451CB2A2FA576002A8A0E /* TravelApp.swift in Sources */,
 				72E9F4142A30F7F900375A63 /* Landmark.swift in Sources */,

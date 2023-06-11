@@ -10,7 +10,7 @@ import MapKit
 import Combine
 import CoreLocation
 
-@MainActor
+
 class LocalSearchService: ObservableObject {
     @Published var region: MKCoordinateRegion = MKCoordinateRegion.defaultRegion()
     let locationManager = LocationManager()
