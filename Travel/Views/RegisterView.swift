@@ -13,7 +13,6 @@ import FirebaseStorage
 
 struct RegisterView: View {
     @State private var selectedItem: PhotosPickerItem?
-    @State private var selectedPhotoData: Data? = UIImage(systemName: "person.circle.fill")?.pngData() //Default
     @State private var signUpSuccess = false
     @State private var showAlert = false
     
@@ -24,38 +23,26 @@ struct RegisterView: View {
     
     func signUpWithEmail(){
         if authModel.password != authModel.confirmPassword{
-            self.showAlert = true
+            authModel.isValid = false
             authModel.errorMessage = "兩次密碼不相符"
         }
         else if authModel.email.isEmpty{
-            self.showAlert = true
+            authModel.isValid = false
             authModel.errorMessage = "電子郵件不得為空"
         }
         else if authModel.password.isEmpty{
-            self.showAlert = true
+            authModel.isValid = false
             authModel.errorMessage = "密碼不得為空"
         }
         else if authModel.nickname.isEmpty{
-            self.showAlert = true
+            authModel.isValid = false
             authModel.errorMessage = "暱稱不得為空"
         }
         else{
-            /*
-             // Image
-             self.uploadImage(UID: user.uid)
-             // NickName
-            
-             }
-             */
             Task{
-                authModel.selectedPhotoData = self.selectedPhotoData
                 if try await authModel.signUpWithEmail(){
-                    self.signUpSuccess = true
+                    
                 }
-                else{
-                    self.showAlert = true
-                }
-                authModel.updateProfile()
             }
         }
     }
@@ -157,8 +144,7 @@ struct RegisterView: View {
                     }
                     
                     HStack(){
-                        if let selectedPhotoData,
-                           let image = UIImage(data: selectedPhotoData) {
+                        if let image = UIImage(data: authModel.selectedPhotoData!) {
                             Image(uiImage: image)
                                 .resizable()
                                 .scaledToFill()
@@ -183,7 +169,7 @@ struct RegisterView: View {
                             newItem in Task{
                                 if let data = try? await
                                     newItem?.loadTransferable(type: Data.self){
-                                    selectedPhotoData = data
+                                    authModel.selectedPhotoData = data
                                 }
                             }
                         }
@@ -194,20 +180,20 @@ struct RegisterView: View {
                                 .frame(width: 60)
                                 .padding(10)
                         }
-                        .alert(isPresented: $signUpSuccess){
-                            Alert(
-                                title: Text("通知"),
-                                message: Text("您已註冊完成"),
-                                dismissButton: .default(Text("確認"), action: {
-                                    dismiss()
-                                })
-                            )
-                        }
-                        .alert(isPresented: $showAlert){
+                        .alert(isPresented: !$authModel.isValid){
                             Alert(
                                 title: Text("警告"),
                                 message: Text(authModel.errorMessage),
                                 dismissButton: .default(Text("確認"))
+                            )
+                        }
+                        .alert(isPresented: $authModel.isSignUp){
+                            Alert(
+                                title: Text("通知"),
+                                message: Text("您已註冊完成"),
+                                dismissButton: .default(Text("確認"), action: {
+                                    //dismiss()
+                                })
                             )
                         }
                         .foregroundColor(.white)

@@ -18,11 +18,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct TravelApp: App {
-<<<<<<< HEAD
     let persistenceController = PersistenceController.shared
     @Environment(\.scenePhase) var scenePhase
     @EnvironmentObject var localSearchService: LocalSearchService
-=======
     init(){
         FirebaseApp.configure()
         /*
@@ -36,23 +34,16 @@ struct TravelApp: App {
         Storage.storage().useEmulator(withHost: "localhost", port: 9199)
          */
     }
->>>>>>> e90f932badfc746a275abcf1b9fe0d7819ea54e4
     
-    let persistenceController = PersistenceController.shared
-    
-    @Environment(\.scenePhase) var scenePhase
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
         
     var body: some Scene {
         WindowGroup {
             MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-<<<<<<< HEAD
                 .environmentObject(LocalSearchService())
                 .environmentObject(LandmarkManager())
-=======
                 .environmentObject(AuthModel())
->>>>>>> e90f932badfc746a275abcf1b9fe0d7819ea54e4
         }
     }
     
