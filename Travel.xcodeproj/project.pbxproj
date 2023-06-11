@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		13051D242A343D1E0090FE60 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13051D232A343D1E0090FE60 /* AuthModel.swift */; };
+		132D0CEC2A35B3120055D69F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132D0CEB2A35B3120055D69F /* UserModel.swift */; };
+		132D0CEE2A35BA930055D69F /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132D0CED2A35BA930055D69F /* UserObject.swift */; };
+		132D0CF02A35CFCD0055D69F /* FriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132D0CEF2A35CFCD0055D69F /* FriendModel.swift */; };
 		1335A3A12A31AF4900052537 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1335A3A02A31AF4900052537 /* FirebaseAnalytics */; };
 		1335A3A42A31C44B00052537 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1335A3A32A31C44B00052537 /* FirebaseAuth */; };
 		1335A3A62A31C45700052537 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1335A3A52A31C45700052537 /* FirebaseFirestoreSwift */; };
@@ -48,6 +51,9 @@
 
 /* Begin PBXFileReference section */
 		13051D232A343D1E0090FE60 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		132D0CEB2A35B3120055D69F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		132D0CED2A35BA930055D69F /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
+		132D0CEF2A35CFCD0055D69F /* FriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModel.swift; sourceTree = "<group>"; };
 		1335A3C02A31DC0700052537 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		1335A3C22A31E3C200052537 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = ../../../../../../Documents/LoginView.swift; sourceTree = "<group>"; };
 		1335A3C42A321C8600052537 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -181,11 +187,11 @@
 			isa = PBXGroup;
 			children = (
 				72E9F4132A30F7F900375A63 /* Landmark.swift */,
-
+				132D0CED2A35BA930055D69F /* UserObject.swift */,
 				7258E02F2A3323AC00CCF163 /* BoolEnvironmentVariable.swift */,
-
 				13051D232A343D1E0090FE60 /* AuthModel.swift */,
-
+				132D0CEF2A35CFCD0055D69F /* FriendModel.swift */,
+				132D0CEB2A35B3120055D69F /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,14 +310,13 @@
 				720451D42A2FA577002A8A0E /* Persistence.swift in Sources */,
 				72E9F40F2A30EFD500375A63 /* MKCoordinateRegion+Extensions.swift in Sources */,
 				7258E0302A3323AC00CCF163 /* BoolEnvironmentVariable.swift in Sources */,
+				132D0CF02A35CFCD0055D69F /* FriendModel.swift in Sources */,
 				723E3C4A2A32488800FC6649 /* LandmarkManager.swift in Sources */,
 				7258E0322A3397D700CCF163 /* TimeManager.swift in Sources */,
 				720451D72A2FA577002A8A0E /* Travel.xcdatamodeld in Sources */,
-
-				720451CD2A2FA576002A8A0E /* ContentView.swift in Sources */,
+				132D0CEC2A35B3120055D69F /* UserModel.swift in Sources */,
 				1335A3C52A321C8600052537 /* RegisterView.swift in Sources */,
 				13051D242A343D1E0090FE60 /* AuthModel.swift in Sources */,
-
 				720451E82A305FBF002A8A0E /* HomeView.swift in Sources */,
 				720451DE2A2FA5BC002A8A0E /* MainView.swift in Sources */,
 				72F7E9932A3079DE007EC0FA /* MapView.swift in Sources */,
@@ -322,6 +327,7 @@
 				72F7E9972A307A65007EC0FA /* FriendView.swift in Sources */,
 				720451CB2A2FA576002A8A0E /* TravelApp.swift in Sources */,
 				72E9F4142A30F7F900375A63 /* Landmark.swift in Sources */,
+				132D0CEE2A35BA930055D69F /* UserObject.swift in Sources */,
 				1369B8B12A346E26002591DE /* FriendInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

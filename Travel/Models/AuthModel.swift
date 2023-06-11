@@ -94,7 +94,7 @@ class AuthModel: ObservableObject{
                     let profileRef = storageRef.child("\(self.user!.uid)/Profile.png")
                     profileRef.downloadURL { url, error in
                         if let error = error {
-                            self.errorMessage = error!.localizedDescription
+                            self.errorMessage = error.localizedDescription
                             self.isValid = false
                         } else {
                             changeRequest.photoURL =  url
@@ -107,6 +107,10 @@ class AuthModel: ObservableObject{
                                 else{
                                     self.isValid = true
                                     self.isSignUp = true
+                                    let reference = Database.database().reference()
+                                    reference.child("User/\(self.user!.uid)/displayName").setValue(self.nickname)
+                                    reference.child("User/\(self.user!.uid)/email").setValue(self.email)
+                                    reference.child("User/\(self.user!.uid)/photoURL").setValue(url?.absoluteString)
                                 }
                             }
                         }
