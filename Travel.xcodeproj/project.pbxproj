@@ -49,9 +49,9 @@
 /* Begin PBXFileReference section */
 		13051D232A343D1E0090FE60 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		1335A3C02A31DC0700052537 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
-		1335A3C22A31E3C200052537 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = ../../../../../../Documents/LoginView.swift; sourceTree = "<group>"; };
+		1335A3C22A31E3C200052537 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1335A3C42A321C8600052537 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		133F39FB2A33A68100F5E747 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		133F39FB2A33A68100F5E747 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1369B8B02A346E26002591DE /* FriendInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfoView.swift; sourceTree = "<group>"; };
 		720451C72A2FA576002A8A0E /* Travel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		720451CA2A2FA576002A8A0E /* TravelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelApp.swift; sourceTree = "<group>"; };
@@ -181,11 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				72E9F4132A30F7F900375A63 /* Landmark.swift */,
-
 				7258E02F2A3323AC00CCF163 /* BoolEnvironmentVariable.swift */,
-
 				13051D232A343D1E0090FE60 /* AuthModel.swift */,
-
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -307,11 +304,8 @@
 				723E3C4A2A32488800FC6649 /* LandmarkManager.swift in Sources */,
 				7258E0322A3397D700CCF163 /* TimeManager.swift in Sources */,
 				720451D72A2FA577002A8A0E /* Travel.xcdatamodeld in Sources */,
-
-				720451CD2A2FA576002A8A0E /* ContentView.swift in Sources */,
 				1335A3C52A321C8600052537 /* RegisterView.swift in Sources */,
 				13051D242A343D1E0090FE60 /* AuthModel.swift in Sources */,
-
 				720451E82A305FBF002A8A0E /* HomeView.swift in Sources */,
 				720451DE2A2FA5BC002A8A0E /* MainView.swift in Sources */,
 				72F7E9932A3079DE007EC0FA /* MapView.swift in Sources */,
@@ -451,7 +445,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Travel/Preview Content\"";
-				DEVELOPMENT_TEAM = 7R2D63722X;
+				DEVELOPMENT_TEAM = 6ULV77C4SH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Travel/Info.plist;
@@ -482,7 +476,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Travel/Preview Content\"";
-				DEVELOPMENT_TEAM = 7R2D63722X;
+				DEVELOPMENT_TEAM = 6ULV77C4SH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Travel/Info.plist;

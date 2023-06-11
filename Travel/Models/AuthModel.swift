@@ -94,7 +94,7 @@ class AuthModel: ObservableObject{
                     let profileRef = storageRef.child("\(self.user!.uid)/Profile.png")
                     profileRef.downloadURL { url, error in
                         if let error = error {
-                            self.errorMessage = error!.localizedDescription
+                            self.errorMessage = error.localizedDescription
                             self.isValid = false
                         } else {
                             changeRequest.photoURL =  url
