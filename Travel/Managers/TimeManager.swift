@@ -8,6 +8,6 @@
 import Foundation
 
 class TimeManager: ObservableObject {
-    @Published var tripTime = Date()
+    @Published var time = Date()
     
 }

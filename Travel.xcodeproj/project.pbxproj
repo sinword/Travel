@@ -33,6 +33,7 @@
 		720451E22A3050F3002A8A0E /* NewTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720451E12A3050F3002A8A0E /* NewTripView.swift */; };
 		720451E62A305158002A8A0E /* EditTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720451E52A305158002A8A0E /* EditTripView.swift */; };
 		720451E82A305FBF002A8A0E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720451E72A305FBF002A8A0E /* HomeView.swift */; };
+		722474072A35CD1300DCC709 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722474062A35CD1300DCC709 /* TripModel.swift */; };
 		723E3C4A2A32488800FC6649 /* LandmarkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723E3C492A32488800FC6649 /* LandmarkManager.swift */; };
 		7258E0302A3323AC00CCF163 /* BoolEnvironmentVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7258E02F2A3323AC00CCF163 /* BoolEnvironmentVariable.swift */; };
 		7258E0322A3397D700CCF163 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7258E0312A3397D700CCF163 /* TimeManager.swift */; };
@@ -63,6 +64,7 @@
 		720451E12A3050F3002A8A0E /* NewTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripView.swift; sourceTree = "<group>"; };
 		720451E52A305158002A8A0E /* EditTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripView.swift; sourceTree = "<group>"; };
 		720451E72A305FBF002A8A0E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		722474062A35CD1300DCC709 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
 		723E3C492A32488800FC6649 /* LandmarkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkManager.swift; sourceTree = "<group>"; };
 		7258E02F2A3323AC00CCF163 /* BoolEnvironmentVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolEnvironmentVariable.swift; sourceTree = "<group>"; };
 		7258E0312A3397D700CCF163 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				72E9F4132A30F7F900375A63 /* Landmark.swift */,
 				7258E02F2A3323AC00CCF163 /* BoolEnvironmentVariable.swift */,
+				722474062A35CD1300DCC709 /* TripModel.swift */,
 				13051D232A343D1E0090FE60 /* AuthModel.swift */,
 			);
 			path = Models;
@@ -296,6 +299,7 @@
 			files = (
 				720451E62A305158002A8A0E /* EditTripView.swift in Sources */,
 				1335A3C12A31DC0700052537 /* Register.swift in Sources */,
+				722474072A35CD1300DCC709 /* TripModel.swift in Sources */,
 				720451E22A3050F3002A8A0E /* NewTripView.swift in Sources */,
 				72E9F4192A31058600375A63 /* LandmarkListView.swift in Sources */,
 				720451D42A2FA577002A8A0E /* Persistence.swift in Sources */,

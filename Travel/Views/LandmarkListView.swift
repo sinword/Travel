@@ -11,7 +11,6 @@ import MapKit
 struct LandmarkListView: View {
     @EnvironmentObject var localSearchService: LocalSearchService
     @EnvironmentObject var designatedLandmark: LandmarkManager
-    
     var body: some View {
         VStack {
             List(localSearchService.landmarks) { landmark in
@@ -29,9 +28,11 @@ struct LandmarkListView: View {
                         localSearchService.region = MKCoordinateRegion.regionFromLandmark(landmark)
                     }
                 }
+                
             }
         }
         .padding(.top, 5)
+        .frame(height: 250)
     }
         
     

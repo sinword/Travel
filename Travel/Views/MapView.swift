@@ -46,7 +46,9 @@ struct MapView: View {
                 .background(Color(.systemGray6))
                 .cornerRadius(12)
                 .padding(.vertical, 10)
-                                
+                
+                
+                // Confirm destination button
                 Button(action: {
                     if designatedLandmark.isEdit {
                         presentationMode.wrappedValue.dismiss()
@@ -62,16 +64,7 @@ struct MapView: View {
             .padding(.trailing, 20)
             
             // List of map search result
-            if localSearchService.landmarks.isEmpty {
-                Text("Delicious places awaits you!")
-                    .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(.gray, lineWidth: 2)
-                    )
-                    .padding(.top, 10)
-            }
-            else {
+            if !localSearchService.landmarks.isEmpty {
                 LandmarkListView()
             }
             // Map
@@ -87,7 +80,7 @@ struct MapView: View {
             Spacer()
         }
         .padding(.top, 10)
-        // .navigationBarHidden(true)
+
     }
     
     var bachgoruldColor: Color {

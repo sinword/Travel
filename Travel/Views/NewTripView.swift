@@ -7,17 +7,24 @@
 
 import SwiftUI
 import MapKit
+import Firebase
+import FirebaseDatabase
+import FirebaseDatabaseUI
 
 struct NewTripView: View {
     @EnvironmentObject var localSearchService: LocalSearchService
     @EnvironmentObject var designatedLandmark: LandmarkManager
     @Environment (\.presentationMode) var presentationMode
-    @State private var name = ""
-    @State private var destination = ""
     @State private var showMapView = false
     @State private var mapSnapshot: UIImage?
-    @StateObject var timeManager = TimeManager()
     @State var members = ["John", "Jane", "Alice", "Bob", "Sam", "Michele"]
+    
+    @State private var tripName = ""
+    @State private var tripDestination = ""
+    @StateObject var tripTime = TimeManager()
+    @StateObject var newTrip = TripModel()
+    
+    // private let database = Database.database().reference()
 
     var body: some View {
         ScrollView {
@@ -42,7 +49,7 @@ struct NewTripView: View {
                 
                 HStack {
                     Spacer()
-                    TextField("Placeholder", text: $name, prompt: Text("Trip Name"))
+                    TextField("Placeholder", text: $tripName, prompt: Text("Trip Name"))
                         .frame(width: UIScreen.main.bounds.width * 0.8, height: 50)
                         .textFieldStyle(.roundedBorder)
                         .cornerRadius(5)
@@ -59,16 +66,6 @@ struct NewTripView: View {
                 }
                 .padding(.top, 5)
                 
-//                HStack {
-//                    Spacer()
-//                    TextField("Placeholder", text: $destination, prompt: Text("Destination"))
-//                        .frame(width: UIScreen.main.bounds.width * 0.8, height: 50)
-//                        .textFieldStyle(.roundedBorder)
-//                        .cornerRadius(5)
-//                    Spacer()
-//                }
-//                .padding(.top, -10)
-                
                 HStack {
                     Spacer()
                     NavigationLink(destination: MapView(), isActive: $showMapView) {
@@ -82,9 +79,6 @@ struct NewTripView: View {
                                 .cornerRadius(12)
                                 .shadow(radius: 3, x: 0, y: 2)
                         }
-    //                    else {
-    //                        Image("TmpImage")
-    //                    }
                     }
                     .onAppear {
                         captureMapSnapshot()
@@ -112,13 +106,12 @@ struct NewTripView: View {
                 }
                 .padding(.top, 15)
                             
-                DatePicker("Time", selection: $timeManager.tripTime)
+                DatePicker("Time", selection: $tripTime.time)
                     .font(.system(size: 18))
                     .fontWeight(.semibold)
                     .padding(.top, 15)
                     .padding(.leading, 40)
                     .padding(.trailing, 40)
-                
                 
                 memberView
                     .padding(.top, 15)
@@ -134,7 +127,7 @@ struct NewTripView: View {
     
     }
         
-       
+           
     var memberView: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -160,7 +153,6 @@ struct NewTripView: View {
                         HStack {
                             Text("\(member)")
                             Spacer()
-                            
                             Button(action: {
                                 removeMember(member: member)
                             }) {
@@ -191,6 +183,8 @@ struct NewTripView: View {
             Button(action: {
                 // Check each item is filled
                 // Save current trip info to coredata
+                newTrip.update(name: tripName, time: tripTime.time, destination: designatedLandmark.landmark)
+                newTrip.printInfo()
                 presentationMode.wrappedValue.dismiss()
             }) {
                 HStack {
