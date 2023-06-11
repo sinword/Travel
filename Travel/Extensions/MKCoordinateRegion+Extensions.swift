@@ -15,6 +15,6 @@ extension MKCoordinateRegion {
     }
     
     static func regionFromLandmark(_ landmark: Landmark) -> MKCoordinateRegion {
-        MKCoordinateRegion(center: landmark.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        MKCoordinateRegion(center: landmark.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003))
     }
 }

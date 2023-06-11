@@ -10,29 +10,37 @@ import MapKit
 
 struct LandmarkListView: View {
     @EnvironmentObject var localSearchService: LocalSearchService
+    @EnvironmentObject var designatedLandmark: LandmarkManager
+    
     var body: some View {
         VStack {
             List(localSearchService.landmarks) { landmark in
-                VStack {
+                VStack(alignment: .leading) {
                     Text(landmark.name)
+                    Text(landmark.formattedDistance)
                     Text(landmark.title)
                         .opacity(0.5)
                 }
-                .listRowBackground(localSearchService.landmark == landmark ? Color(UIColor.lightGray): Color.white)
+                .listRowBackground(localSearchService.landmark == landmark ? Color(UIColor.systemGray2): Color.white)
                 .onTapGesture {
                     localSearchService.landmark = landmark
+                    designatedLandmark.update(newLandmark: landmark)
                     withAnimation {
                         localSearchService.region = MKCoordinateRegion.regionFromLandmark(landmark)
                     }
-                    
                 }
             }
         }
+        .padding(.top, 5)
     }
+        
+    
 }
 
 struct LandmarkListView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkListView().environmentObject(LocalSearchService())
+        LandmarkListView()
+            .environmentObject(LocalSearchService())
+            .environmentObject(LandmarkManager())
     }
 }

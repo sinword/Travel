@@ -9,8 +9,9 @@ import Foundation
 import MapKit
 
 struct Landmark: Identifiable, Hashable {
-    let placemark: MKPlacemark
-    let id = UUID()
+    var id = UUID()
+    var placemark: MKPlacemark
+    var distance: CLLocationDistance
     
     var name: String {
         self.placemark.name ?? ""
@@ -20,6 +21,8 @@ struct Landmark: Identifiable, Hashable {
     }
     var coordinate:CLLocationCoordinate2D {
         self.placemark.coordinate
-        
+    }
+    var formattedDistance: String { // kilometer
+        String(format: "%.2f KM", distance / 1000.0)
     }
 }

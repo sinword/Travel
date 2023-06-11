@@ -9,6 +9,8 @@ import SwiftUI
 import MapKit
 
 struct HomeView: View {
+    @EnvironmentObject var localSearchService: LocalSearchService
+    @EnvironmentObject var designatedLandmark: LandmarkManager
     static let lemonGreen = Color("ThemeGreen")
     @State var showDetail = false
     
@@ -28,20 +30,19 @@ struct HomeView: View {
                 scheduledTripView
                     .padding(.leading, UIScreen.main.bounds.width * 0.1)
                     .padding(.trailing, UIScreen.main.bounds.width * 0.1)
-                    .padding(.top, 20)
-                
-                
+                    .padding(.top, 20)                
                 Spacer()
             }
         }
-        
+            
     }
     
     var newTripButtonView: some View {
-        
         HStack {
             Spacer()
             Button(action: {
+                designatedLandmark.clear()
+                localSearchService.clear()
                 showDetail = true
             }) {
                 HStack {
@@ -64,7 +65,6 @@ struct HomeView: View {
             NavigationLink(destination: NewTripView(), isActive: $showDetail) {
                 EmptyView()
             }
-            
             Spacer()
         }
     
@@ -105,10 +105,7 @@ struct HomeView: View {
 //            NavigationStack {
 //                ForEach
 //            }
-            
-            
         }
-    
     }
     
     
@@ -119,5 +116,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(LocalSearchService())
+            .environmentObject(LandmarkManager())
     }
 }
