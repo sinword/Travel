@@ -9,49 +9,62 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct FriendView: View {
+    @StateObject var friendModel = FriendModel()
+    @EnvironmentObject var authModel: AuthModel
     var body: some View {
-        VStack{
-            HStack{
-                Text("Friends")
-                    .font(.title)
-                    .fontWeight(.bold)
-                Spacer()
-                Button(action: {print("E")}){
-                    Text("Add Friend")
+        NavigationStack{
+            VStack{
+                HStack{
+                    Text("Friends")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    Spacer()
+                    Button(action: {print("E")}){
+                        Text("Add Friend")
+                    }
+                }.padding(20)
+                if friendModel.userList.isEmpty{
+                    Text("You have no friend!")
                 }
+                else{
+                    List(friendModel.userList, id: \.self){ user in
+                        HStack{
+                            WebImage(url: user.profileURL)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 50, height: 50)
+                                .clipShape(Circle())
+                                .padding([.trailing], 10)
+                            Text("\(user.nickname)")
+                                .font(.title2)
+                            
+                        }
+                        .swipeActions(edge: .trailing){
+                            Button {
+                                friendModel.getUIDFromMail(email: "Josephchen102345@gmail.com")
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }
+                            .tint(.red)
+                            
+                            NavigationLink(destination: FriendInfoView().environmentObject(UserModel(uid: user.uid))){
+                                Button {
+                                } label: {
+                                    Label("Info", systemImage: "paperplane")
+                                }
+                                
+                            }.tint(.blue)
+                        }
+                    }
+                }
+                
+                
             }.padding(20)
-            
-            List{
-                ForEach(1..<4){ index in
-                    HStack{
-                        WebImage(url: URL(string: "https://cdn.vox-cdn.com/thumbor/WR9hE8wvdM4hfHysXitls9_bCZI=/0x0:1192x795/1400x1400/filters:focal(596x398:597x399)/cdn.vox-cdn.com/uploads/chorus_asset/file/22312759/rickroll_4k.jpg"))
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 50, height: 50)
-                            .clipShape(Circle())
-                            .padding([.trailing], 10)
-                        Text("Rick")
-                            .font(.title2)
-                        
-                    }
-                    .swipeActions(edge: .trailing){
-                        Button {
-                            print("Bye")
-                        } label: {
-                            Label("Delete", systemImage: "trash")
-                        }
-                        .tint(.red)
-                        
-                        Button {
-                            print("Mark as favorite")
-                        } label: {
-                            Label("Favorite", systemImage: "paperplane")
-                        }
-                        .tint(.blue)
-                    }
+                .onAppear{
+                    print(authModel.user?.uid)
+                    friendModel.getFriendList(uid: authModel.user?.uid ?? "")
                 }
-            }
-        }.padding(20)
+        }
     }
 }
 

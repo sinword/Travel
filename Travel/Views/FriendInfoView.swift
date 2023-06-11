@@ -9,10 +9,12 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct FriendInfoView: View {
+    @EnvironmentObject var userModel: UserModel
+    
     var body: some View {
         NavigationStack{
             VStack{
-                WebImage(url: URL(string: "https://cdn.vox-cdn.com/thumbor/WR9hE8wvdM4hfHysXitls9_bCZI=/0x0:1192x795/1400x1400/filters:focal(596x398:597x399)/cdn.vox-cdn.com/uploads/chorus_asset/file/22312759/rickroll_4k.jpg"))
+                WebImage(url: userModel.user?.profileURL)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 200, height: 200)
@@ -24,7 +26,7 @@ struct FriendInfoView: View {
                     .padding([.bottom], 10)
                 
                 HStack{
-                    Text("Rick")
+                    Text(userModel.user?.nickname ?? "")
                         .font(.title)
                         .fontWeight(.bold)
                 }
@@ -42,7 +44,7 @@ struct FriendInfoView: View {
                         }.padding([.leading], 20)
                             .padding([.bottom], 5)
                         HStack{
-                            Text("Rick")
+                            Text(userModel.user?.nickname ?? "")
                                 .foregroundColor(.blue)
                             Spacer()
                             
@@ -63,7 +65,7 @@ struct FriendInfoView: View {
                         }.padding([.leading], 20)
                             .padding([.bottom], 5)
                         HStack{
-                            Text("Never gonna give you up")
+                            Text("This is a note")
                                 .foregroundColor(.blue)
                             Spacer()
                             
@@ -71,12 +73,6 @@ struct FriendInfoView: View {
                     }.padding([.bottom], 150)
                 }.padding([.bottom], 25)
                 
-                Button(action: {print("E")}){
-                    Text("Delete")
-                        .foregroundColor(.red)
-                        .underline()
-                        .font(.title2)
-                }
             }.padding(20)
         }
     }
