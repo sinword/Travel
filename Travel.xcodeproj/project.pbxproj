@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		13051D242A343D1E0090FE60 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13051D232A343D1E0090FE60 /* AuthModel.swift */; };
+		132D0CEC2A35B3120055D69F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132D0CEB2A35B3120055D69F /* UserModel.swift */; };
+		132D0CEE2A35BA930055D69F /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132D0CED2A35BA930055D69F /* UserObject.swift */; };
+		132D0CF02A35CFCD0055D69F /* FriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132D0CEF2A35CFCD0055D69F /* FriendModel.swift */; };
 		1335A3A12A31AF4900052537 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1335A3A02A31AF4900052537 /* FirebaseAnalytics */; };
 		1335A3A42A31C44B00052537 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1335A3A32A31C44B00052537 /* FirebaseAuth */; };
 		1335A3A62A31C45700052537 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1335A3A52A31C45700052537 /* FirebaseFirestoreSwift */; };
@@ -24,10 +27,6 @@
 		133F39FC2A33A68100F5E747 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 133F39FB2A33A68100F5E747 /* GoogleService-Info.plist */; };
 		1369B8AD2A3467BA002591DE /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1369B8AC2A3467BA002591DE /* SDWebImageSwiftUI */; };
 		1369B8B12A346E26002591DE /* FriendInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1369B8B02A346E26002591DE /* FriendInfoView.swift */; };
-		136C23B22A360302007D865D /* InvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136C23B12A360302007D865D /* InvitationView.swift */; };
-		136C23B62A360A30007D865D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136C23B52A360A30007D865D /* UserModel.swift */; };
-		136C23B82A360A51007D865D /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136C23B72A360A51007D865D /* UserObject.swift */; };
-		13CE10112A361106007DFB57 /* FriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CE10102A361106007DFB57 /* FriendModel.swift */; };
 		720451CB2A2FA576002A8A0E /* TravelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720451CA2A2FA576002A8A0E /* TravelApp.swift */; };
 		720451CF2A2FA577002A8A0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720451CE2A2FA577002A8A0E /* Assets.xcassets */; };
 		720451D22A2FA577002A8A0E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720451D12A2FA577002A8A0E /* Preview Assets.xcassets */; };
@@ -37,10 +36,13 @@
 		720451E22A3050F3002A8A0E /* NewTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720451E12A3050F3002A8A0E /* NewTripView.swift */; };
 		720451E62A305158002A8A0E /* EditTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720451E52A305158002A8A0E /* EditTripView.swift */; };
 		720451E82A305FBF002A8A0E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720451E72A305FBF002A8A0E /* HomeView.swift */; };
-		722474072A35CD1300DCC709 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722474062A35CD1300DCC709 /* TripModel.swift */; };
 		723E3C4A2A32488800FC6649 /* LandmarkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723E3C492A32488800FC6649 /* LandmarkManager.swift */; };
 		7258E0302A3323AC00CCF163 /* BoolEnvironmentVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7258E02F2A3323AC00CCF163 /* BoolEnvironmentVariable.swift */; };
 		7258E0322A3397D700CCF163 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7258E0312A3397D700CCF163 /* TimeManager.swift */; };
+		728A08642A36176F0015EAB7 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A08632A36176F0015EAB7 /* TripModel.swift */; };
+		728A08662A362FB30015EAB7 /* TripManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A08652A362FB30015EAB7 /* TripManager.swift */; };
+		728A086C2A3656430015EAB7 /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A086B2A3656430015EAB7 /* TripListView.swift */; };
+		728A086E2A3666D30015EAB7 /* EditMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A086D2A3666D30015EAB7 /* EditMapView.swift */; };
 		72E9F40C2A30E2E500375A63 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E9F40B2A30E2E500375A63 /* LocationManager.swift */; };
 		72E9F40F2A30EFD500375A63 /* MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E9F40E2A30EFD500375A63 /* MKCoordinateRegion+Extensions.swift */; };
 		72E9F4112A30F5AA00375A63 /* LocalSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E9F4102A30F5AA00375A63 /* LocalSearchService.swift */; };
@@ -53,15 +55,14 @@
 
 /* Begin PBXFileReference section */
 		13051D232A343D1E0090FE60 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		132D0CEB2A35B3120055D69F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		132D0CED2A35BA930055D69F /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
+		132D0CEF2A35CFCD0055D69F /* FriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModel.swift; sourceTree = "<group>"; };
 		1335A3C02A31DC0700052537 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		1335A3C22A31E3C200052537 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1335A3C42A321C8600052537 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		133F39FB2A33A68100F5E747 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1369B8B02A346E26002591DE /* FriendInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfoView.swift; sourceTree = "<group>"; };
-		136C23B12A360302007D865D /* InvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationView.swift; sourceTree = "<group>"; };
-		136C23B52A360A30007D865D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		136C23B72A360A51007D865D /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
-		13CE10102A361106007DFB57 /* FriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModel.swift; sourceTree = "<group>"; };
 		720451C72A2FA576002A8A0E /* Travel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		720451CA2A2FA576002A8A0E /* TravelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelApp.swift; sourceTree = "<group>"; };
 		720451CE2A2FA577002A8A0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,10 +73,13 @@
 		720451E12A3050F3002A8A0E /* NewTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripView.swift; sourceTree = "<group>"; };
 		720451E52A305158002A8A0E /* EditTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripView.swift; sourceTree = "<group>"; };
 		720451E72A305FBF002A8A0E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		722474062A35CD1300DCC709 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
 		723E3C492A32488800FC6649 /* LandmarkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkManager.swift; sourceTree = "<group>"; };
 		7258E02F2A3323AC00CCF163 /* BoolEnvironmentVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolEnvironmentVariable.swift; sourceTree = "<group>"; };
 		7258E0312A3397D700CCF163 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
+		728A08632A36176F0015EAB7 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
+		728A08652A362FB30015EAB7 /* TripManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManager.swift; sourceTree = "<group>"; };
+		728A086B2A3656430015EAB7 /* TripListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripListView.swift; sourceTree = "<group>"; };
+		728A086D2A3666D30015EAB7 /* EditMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMapView.swift; sourceTree = "<group>"; };
 		72E9F4062A30DCB400375A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72E9F40B2A30E2E500375A63 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		72E9F40E2A30EFD500375A63 /* MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
@@ -173,8 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				72E9F40B2A30E2E500375A63 /* LocationManager.swift */,
-				723E3C492A32488800FC6649 /* LandmarkManager.swift */,
 				7258E0312A3397D700CCF163 /* TimeManager.swift */,
+				728A08652A362FB30015EAB7 /* TripManager.swift */,
+				723E3C492A32488800FC6649 /* LandmarkManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -190,13 +195,13 @@
 		72E9F4122A30F7E000375A63 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				136C23B72A360A51007D865D /* UserObject.swift */,
 				72E9F4132A30F7F900375A63 /* Landmark.swift */,
+				132D0CED2A35BA930055D69F /* UserObject.swift */,
 				7258E02F2A3323AC00CCF163 /* BoolEnvironmentVariable.swift */,
-				722474062A35CD1300DCC709 /* TripModel.swift */,
 				13051D232A343D1E0090FE60 /* AuthModel.swift */,
-				136C23B52A360A30007D865D /* UserModel.swift */,
-				13CE10102A361106007DFB57 /* FriendModel.swift */,
+				132D0CEF2A35CFCD0055D69F /* FriendModel.swift */,
+				132D0CEB2A35B3120055D69F /* UserModel.swift */,
+				728A08632A36176F0015EAB7 /* TripModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -208,14 +213,15 @@
 				720451E72A305FBF002A8A0E /* HomeView.swift */,
 				72F7E9922A3079DE007EC0FA /* MapView.swift */,
 				72F7E9962A307A65007EC0FA /* FriendView.swift */,
-				136C23B12A360302007D865D /* InvitationView.swift */,
 				1369B8B02A346E26002591DE /* FriendInfoView.swift */,
 				72F7E9942A307A1F007EC0FA /* InfoView.swift */,
 				720451E12A3050F3002A8A0E /* NewTripView.swift */,
 				720451E52A305158002A8A0E /* EditTripView.swift */,
+				728A086B2A3656430015EAB7 /* TripListView.swift */,
 				72E9F4182A31058600375A63 /* LandmarkListView.swift */,
 				1335A3C22A31E3C200052537 /* LoginView.swift */,
 				1335A3C42A321C8600052537 /* RegisterView.swift */,
+				728A086D2A3666D30015EAB7 /* EditMapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,32 +316,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				720451E62A305158002A8A0E /* EditTripView.swift in Sources */,
-				13CE10112A361106007DFB57 /* FriendModel.swift in Sources */,
 				1335A3C12A31DC0700052537 /* Register.swift in Sources */,
-				722474072A35CD1300DCC709 /* TripModel.swift in Sources */,
+				728A08642A36176F0015EAB7 /* TripModel.swift in Sources */,
 				720451E22A3050F3002A8A0E /* NewTripView.swift in Sources */,
 				72E9F4192A31058600375A63 /* LandmarkListView.swift in Sources */,
 				720451D42A2FA577002A8A0E /* Persistence.swift in Sources */,
 				72E9F40F2A30EFD500375A63 /* MKCoordinateRegion+Extensions.swift in Sources */,
 				7258E0302A3323AC00CCF163 /* BoolEnvironmentVariable.swift in Sources */,
+				132D0CF02A35CFCD0055D69F /* FriendModel.swift in Sources */,
+				728A086E2A3666D30015EAB7 /* EditMapView.swift in Sources */,
 				723E3C4A2A32488800FC6649 /* LandmarkManager.swift in Sources */,
 				7258E0322A3397D700CCF163 /* TimeManager.swift in Sources */,
 				720451D72A2FA577002A8A0E /* Travel.xcdatamodeld in Sources */,
+				132D0CEC2A35B3120055D69F /* UserModel.swift in Sources */,
 				1335A3C52A321C8600052537 /* RegisterView.swift in Sources */,
-				136C23B82A360A51007D865D /* UserObject.swift in Sources */,
 				13051D242A343D1E0090FE60 /* AuthModel.swift in Sources */,
-				136C23B22A360302007D865D /* InvitationView.swift in Sources */,
 				720451E82A305FBF002A8A0E /* HomeView.swift in Sources */,
-				136C23B62A360A30007D865D /* UserModel.swift in Sources */,
 				720451DE2A2FA5BC002A8A0E /* MainView.swift in Sources */,
+				728A086C2A3656430015EAB7 /* TripListView.swift in Sources */,
 				72F7E9932A3079DE007EC0FA /* MapView.swift in Sources */,
 				72E9F40C2A30E2E500375A63 /* LocationManager.swift in Sources */,
 				1335A3C32A31E3C200052537 /* LoginView.swift in Sources */,
 				72F7E9952A307A1F007EC0FA /* InfoView.swift in Sources */,
 				72E9F4112A30F5AA00375A63 /* LocalSearchService.swift in Sources */,
+				728A08662A362FB30015EAB7 /* TripManager.swift in Sources */,
 				72F7E9972A307A65007EC0FA /* FriendView.swift in Sources */,
 				720451CB2A2FA576002A8A0E /* TravelApp.swift in Sources */,
 				72E9F4142A30F7F900375A63 /* Landmark.swift in Sources */,
+				132D0CEE2A35BA930055D69F /* UserObject.swift in Sources */,
 				1369B8B12A346E26002591DE /* FriendInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
