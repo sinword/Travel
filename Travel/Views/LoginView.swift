@@ -12,8 +12,6 @@ struct LoginView: View {
     @EnvironmentObject var authModel: AuthModel
     @Environment(\.dismiss) var dismiss
     
-    @State var showAlert = false
-    
     var body: some View {
         NavigationStack(){
             VStack{
@@ -87,7 +85,7 @@ struct LoginView: View {
                     .cornerRadius(10)
                     .padding(20)
                     .offset(x: -20)
-                    .alert(isPresented: $showAlert){
+                    .alert(isPresented: !$authModel.isValid){
                         Alert(
                             title: Text("警告"),
                             message: Text(authModel.errorMessage),
@@ -105,10 +103,8 @@ struct LoginView: View {
     func signInWithEmail(){
         Task{
             if try await authModel.signInWithEmail(){
-                self.showAlert = false
             }
             else{
-                self.showAlert = true
             }
         }
     }

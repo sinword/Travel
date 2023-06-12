@@ -10,11 +10,10 @@ import SDWebImageSwiftUI
 
 struct FriendInfoView: View {
     @EnvironmentObject var userModel: UserModel
-    
     var body: some View {
         NavigationStack{
             VStack{
-                WebImage(url: userModel.user?.profileURL)
+                WebImage(url: userModel.user!.profileURL)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 200, height: 200)
@@ -26,7 +25,7 @@ struct FriendInfoView: View {
                     .padding([.bottom], 10)
                 
                 HStack{
-                    Text(userModel.user?.nickname ?? "")
+                    Text(userModel.user!.nickname)
                         .font(.title)
                         .fontWeight(.bold)
                 }
@@ -34,7 +33,7 @@ struct FriendInfoView: View {
                 ZStack{
                     Rectangle()
                         .frame(width: 350, height: 100)
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color(.systemGray6))
                         .cornerRadius(20)
                     VStack{
                         HStack{
@@ -44,7 +43,7 @@ struct FriendInfoView: View {
                         }.padding([.leading], 20)
                             .padding([.bottom], 5)
                         HStack{
-                            Text(userModel.user?.nickname ?? "")
+                            Text(userModel.user!.nickname)
                                 .foregroundColor(.blue)
                             Spacer()
                             
@@ -55,7 +54,7 @@ struct FriendInfoView: View {
                 ZStack{
                     Rectangle()
                         .frame(width: 350, height: 250)
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color(.systemGray6))
                         .cornerRadius(20)
                     VStack{
                         HStack{
@@ -65,14 +64,13 @@ struct FriendInfoView: View {
                         }.padding([.leading], 20)
                             .padding([.bottom], 5)
                         HStack{
-                            Text("This is a note")
+                            Text(userModel.user!.note)
                                 .foregroundColor(.blue)
                             Spacer()
                             
                         }.padding([.leading], 40)
                     }.padding([.bottom], 150)
                 }.padding([.bottom], 25)
-                
             }.padding(20)
         }
     }

@@ -41,25 +41,23 @@ struct InfoView: View {
                         Spacer()
                     }
                     HStack{
-                        Button(action: {logout()}){
+                        NavigationLink(destination: FriendInfoView().environmentObject(UserModel(uid: authModel.user!.uid))){
                             Text("我的資訊")
-                                .foregroundColor(.black)
-                        }
+                        } .foregroundColor(.black)
                         Spacer()
                     }.padding([.leading], 10)
                         .padding([.top], 5)
                     
                     HStack{
-                        Button(action: {logout()}){
+                        NavigationLink(destination: ChangeInfoView().environmentObject(authModel) .environmentObject(UserModel(uid: authModel.user!.uid))){
                             Text("修改個人顯示")
-                                .foregroundColor(.black)
-                        }
+                        } .foregroundColor(.black)
                         Spacer()
                     }.padding([.leading], 10)
                         .padding([.top], 5)
                     
                     HStack{
-                        Button(action: {logout()}){
+                        Button(action: authModel.changePassword){
                             Text("修改密碼")
                                 .foregroundColor(.black)
                         }
@@ -71,7 +69,7 @@ struct InfoView: View {
                         .frame(width: 350, height: 1)
                     
                 }.padding([.leading, .bottom], 5)
-                
+                /*
                 VStack{
                     HStack{
                         Text("偏好設定")
@@ -110,7 +108,7 @@ struct InfoView: View {
                         .frame(width: 350, height: 1)
                     
                 }.padding([.leading, .bottom], 5)
-                
+                */
                 VStack{
                     HStack{
                         Text("關於")
@@ -119,7 +117,7 @@ struct InfoView: View {
                         Spacer()
                     }
                     HStack{
-                        Button(action: {logout()}){
+                        NavigationLink(destination: TextFileView(fileName: "關於我們")){
                             Text("關於我們")
                                 .foregroundColor(.black)
                         }
@@ -128,7 +126,7 @@ struct InfoView: View {
                         .padding([.top], 5)
                     
                     HStack{
-                        Button(action: {logout()}){
+                        NavigationLink(destination: TextFileView(fileName: "常見問題")){
                             Text("常見問題")
                                 .foregroundColor(.black)
                         }
@@ -137,8 +135,8 @@ struct InfoView: View {
                         .padding([.top], 5)
                     
                     HStack{
-                        Button(action: {logout()}){
-                            Text("版本資訊")
+                        NavigationLink(destination: TextFileView(fileName: "版本紀錄")){
+                            Text("版本紀錄")
                                 .foregroundColor(.black)
                         }
                         Spacer()
@@ -168,19 +166,20 @@ struct InfoView: View {
                         .padding([.top], 5)
                 }
                 
-                
+                Spacer()
             }
         }.padding(20)
+    
     }
     func logout(){
         
     }
 }
-let authModel = AuthModel()
+//let authModel = AuthModel()
 
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
         InfoView()
-            .environmentObject(authModel)
+            //.environmentObject(authModel)
     }
 }

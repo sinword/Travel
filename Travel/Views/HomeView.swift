@@ -49,14 +49,10 @@ struct HomeView: View {
                             Text(trip.destination.landmark.name)
                                 .opacity(0.5)
                         }
-//                        
                     }
                 }
                 
                 .padding(.top, 30)
-            
-//                TripListView()
-//                    .padding(.top, 30)
                 Spacer()
             }
         }
@@ -97,11 +93,10 @@ struct HomeView: View {
     
 }
 
-//
-//struct HomeView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HomeView()
-//            .environmentObject(LocalSearchService())
-//            .environmentObject(LandmarkManager())
-//    }
-//}
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
+            .environmentObject(LocalSearchService())
+            .environmentObject(LandmarkManager())
+    }
+}

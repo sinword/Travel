@@ -1,0 +1,5 @@
+- Beta 
+  Firebase 探索
+  Async/ await探索
+  登入／註冊系統
+  社交系統

@@ -41,8 +41,14 @@
 		7258E0322A3397D700CCF163 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7258E0312A3397D700CCF163 /* TimeManager.swift */; };
 		728A08642A36176F0015EAB7 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A08632A36176F0015EAB7 /* TripModel.swift */; };
 		728A08662A362FB30015EAB7 /* TripManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A08652A362FB30015EAB7 /* TripManager.swift */; };
-		728A086C2A3656430015EAB7 /* TripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A086B2A3656430015EAB7 /* TripListView.swift */; };
 		728A086E2A3666D30015EAB7 /* EditMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A086D2A3666D30015EAB7 /* EditMapView.swift */; };
+		72E952B62A3749D000B5F81F /* 關於我們.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E952B22A3749D000B5F81F /* 關於我們.txt */; };
+		72E952B72A3749D000B5F81F /* 版本紀錄.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E952B32A3749D000B5F81F /* 版本紀錄.txt */; };
+		72E952B82A3749D000B5F81F /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E952B42A3749D000B5F81F /* test.txt */; };
+		72E952B92A3749D000B5F81F /* 常見問題.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E952B52A3749D000B5F81F /* 常見問題.txt */; };
+		72E952BB2A374C6B00B5F81F /* InvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E952BA2A374C6B00B5F81F /* InvitationView.swift */; };
+		72E952BD2A374CC500B5F81F /* ChangeInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E952BC2A374CC500B5F81F /* ChangeInfoView.swift */; };
+		72E952BF2A374CDF00B5F81F /* TextFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E952BE2A374CDF00B5F81F /* TextFileView.swift */; };
 		72E9F40C2A30E2E500375A63 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E9F40B2A30E2E500375A63 /* LocationManager.swift */; };
 		72E9F40F2A30EFD500375A63 /* MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E9F40E2A30EFD500375A63 /* MKCoordinateRegion+Extensions.swift */; };
 		72E9F4112A30F5AA00375A63 /* LocalSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E9F4102A30F5AA00375A63 /* LocalSearchService.swift */; };
@@ -78,8 +84,14 @@
 		7258E0312A3397D700CCF163 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		728A08632A36176F0015EAB7 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
 		728A08652A362FB30015EAB7 /* TripManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManager.swift; sourceTree = "<group>"; };
-		728A086B2A3656430015EAB7 /* TripListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripListView.swift; sourceTree = "<group>"; };
 		728A086D2A3666D30015EAB7 /* EditMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMapView.swift; sourceTree = "<group>"; };
+		72E952B22A3749D000B5F81F /* 關於我們.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "關於我們.txt"; sourceTree = "<group>"; };
+		72E952B32A3749D000B5F81F /* 版本紀錄.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "版本紀錄.txt"; sourceTree = "<group>"; };
+		72E952B42A3749D000B5F81F /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
+		72E952B52A3749D000B5F81F /* 常見問題.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "常見問題.txt"; sourceTree = "<group>"; };
+		72E952BA2A374C6B00B5F81F /* InvitationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationView.swift; sourceTree = "<group>"; };
+		72E952BC2A374CC500B5F81F /* ChangeInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeInfoView.swift; sourceTree = "<group>"; };
+		72E952BE2A374CDF00B5F81F /* TextFileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFileView.swift; sourceTree = "<group>"; };
 		72E9F4062A30DCB400375A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72E9F40B2A30E2E500375A63 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		72E9F40E2A30EFD500375A63 /* MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
@@ -141,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				133F39FB2A33A68100F5E747 /* GoogleService-Info.plist */,
+				72E952B12A3749D000B5F81F /* textFolder */,
 				72E9F4152A31046A00375A63 /* Views */,
 				72E9F4122A30F7E000375A63 /* Models */,
 				72E9F4062A30DCB400375A63 /* Info.plist */,
@@ -162,6 +175,17 @@
 				720451D12A2FA577002A8A0E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		72E952B12A3749D000B5F81F /* textFolder */ = {
+			isa = PBXGroup;
+			children = (
+				72E952B22A3749D000B5F81F /* 關於我們.txt */,
+				72E952B32A3749D000B5F81F /* 版本紀錄.txt */,
+				72E952B42A3749D000B5F81F /* test.txt */,
+				72E952B52A3749D000B5F81F /* 常見問題.txt */,
+			);
+			path = textFolder;
 			sourceTree = "<group>";
 		};
 		72E9F4072A30E26A00375A63 /* Services */ = {
@@ -195,11 +219,11 @@
 		72E9F4122A30F7E000375A63 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				72E9F4132A30F7F900375A63 /* Landmark.swift */,
 				132D0CED2A35BA930055D69F /* UserObject.swift */,
+				72E9F4132A30F7F900375A63 /* Landmark.swift */,
 				7258E02F2A3323AC00CCF163 /* BoolEnvironmentVariable.swift */,
-				13051D232A343D1E0090FE60 /* AuthModel.swift */,
 				132D0CEF2A35CFCD0055D69F /* FriendModel.swift */,
+				13051D232A343D1E0090FE60 /* AuthModel.swift */,
 				132D0CEB2A35B3120055D69F /* UserModel.swift */,
 				728A08632A36176F0015EAB7 /* TripModel.swift */,
 			);
@@ -213,11 +237,13 @@
 				720451E72A305FBF002A8A0E /* HomeView.swift */,
 				72F7E9922A3079DE007EC0FA /* MapView.swift */,
 				72F7E9962A307A65007EC0FA /* FriendView.swift */,
+				72E952BA2A374C6B00B5F81F /* InvitationView.swift */,
 				1369B8B02A346E26002591DE /* FriendInfoView.swift */,
+				72E952BC2A374CC500B5F81F /* ChangeInfoView.swift */,
 				72F7E9942A307A1F007EC0FA /* InfoView.swift */,
+				72E952BE2A374CDF00B5F81F /* TextFileView.swift */,
 				720451E12A3050F3002A8A0E /* NewTripView.swift */,
 				720451E52A305158002A8A0E /* EditTripView.swift */,
-				728A086B2A3656430015EAB7 /* TripListView.swift */,
 				72E9F4182A31058600375A63 /* LandmarkListView.swift */,
 				1335A3C22A31E3C200052537 /* LoginView.swift */,
 				1335A3C42A321C8600052537 /* RegisterView.swift */,
@@ -302,8 +328,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72E952B92A3749D000B5F81F /* 常見問題.txt in Resources */,
+				72E952B62A3749D000B5F81F /* 關於我們.txt in Resources */,
+				72E952B72A3749D000B5F81F /* 版本紀錄.txt in Resources */,
 				720451D22A2FA577002A8A0E /* Preview Assets.xcassets in Resources */,
 				720451CF2A2FA577002A8A0E /* Assets.xcassets in Resources */,
+				72E952B82A3749D000B5F81F /* test.txt in Resources */,
 				133F39FC2A33A68100F5E747 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,12 +358,13 @@
 				723E3C4A2A32488800FC6649 /* LandmarkManager.swift in Sources */,
 				7258E0322A3397D700CCF163 /* TimeManager.swift in Sources */,
 				720451D72A2FA577002A8A0E /* Travel.xcdatamodeld in Sources */,
+				72E952BF2A374CDF00B5F81F /* TextFileView.swift in Sources */,
 				132D0CEC2A35B3120055D69F /* UserModel.swift in Sources */,
 				1335A3C52A321C8600052537 /* RegisterView.swift in Sources */,
 				13051D242A343D1E0090FE60 /* AuthModel.swift in Sources */,
+				72E952BD2A374CC500B5F81F /* ChangeInfoView.swift in Sources */,
 				720451E82A305FBF002A8A0E /* HomeView.swift in Sources */,
 				720451DE2A2FA5BC002A8A0E /* MainView.swift in Sources */,
-				728A086C2A3656430015EAB7 /* TripListView.swift in Sources */,
 				72F7E9932A3079DE007EC0FA /* MapView.swift in Sources */,
 				72E9F40C2A30E2E500375A63 /* LocationManager.swift in Sources */,
 				1335A3C32A31E3C200052537 /* LoginView.swift in Sources */,
@@ -345,6 +376,7 @@
 				72E9F4142A30F7F900375A63 /* Landmark.swift in Sources */,
 				132D0CEE2A35BA930055D69F /* UserObject.swift in Sources */,
 				1369B8B12A346E26002591DE /* FriendInfoView.swift in Sources */,
+				72E952BB2A374C6B00B5F81F /* InvitationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

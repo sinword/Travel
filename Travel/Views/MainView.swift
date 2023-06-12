@@ -36,6 +36,7 @@ struct MainView: View {
                     }
                 
                 FriendView()
+                    .environmentObject(authModel)
                     .tabItem {
                         Image(systemName: "person.2.fill")
                         Text("People")
@@ -50,7 +51,8 @@ struct MainView: View {
             }
         }
         else{
-            
+            LoginView()
+                .environmentObject(authModel)
         }
     }
 }

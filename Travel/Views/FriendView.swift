@@ -11,6 +11,9 @@ import SDWebImageSwiftUI
 struct FriendView: View {
     @StateObject var friendModel = FriendModel()
     @EnvironmentObject var authModel: AuthModel
+    @State var email = ""
+    @State var showInputAlert = false
+    
     var body: some View {
         NavigationStack{
             VStack{
@@ -19,8 +22,47 @@ struct FriendView: View {
                         .font(.title)
                         .fontWeight(.bold)
                     Spacer()
-                    Button(action: {print("E")}){
-                        Text("Add Friend")
+                    
+                    if friendModel.invitations.isEmpty {
+                        Image(systemName: "envelope")
+                            .resizable()
+                            .frame(width: 40, height: 30)
+                    }
+                    else{
+                        NavigationLink(destination: InvitationView().environmentObject(friendModel)
+                            .environmentObject(authModel)
+                        ){
+                             Image(systemName: "envelope.badge")
+                                .resizable()
+                                .frame(width: 40, height: 30)
+                            }
+                    }
+                    
+                    Button(action: {self.showInputAlert = true}){
+                        Image(systemName: "person.fill.badge.plus")
+                            .resizable()
+                            .frame(width: 40, height: 30)
+                    }
+                    .alert(isPresented: $friendModel.showNotify){
+                        Alert(
+                            title: Text("通知"),
+                            message: Text("好友邀請已送出！"),
+                            dismissButton: .default(Text("確認"))
+                        )
+                    }
+                    .alert("Please Enter",isPresented: $showInputAlert){
+                        TextField("Email", text: $email)
+                            .textCase(.lowercase)
+                        Button("Submit", action: submit)
+                    } message: {
+                        Text("請輸入想要加好友的對象的Email")
+                    }
+                    .alert(isPresented: $friendModel.showAlert){
+                        Alert(
+                            title: Text("警告"),
+                            message: Text(friendModel.errorMessage),
+                            dismissButton: .default(Text("確認"))
+                        )
                     }
                 }.padding(20)
                 if friendModel.userList.isEmpty{
@@ -41,7 +83,7 @@ struct FriendView: View {
                         }
                         .swipeActions(edge: .trailing){
                             Button {
-                                friendModel.getUIDFromMail(email: "Josephchen102345@gmail.com")
+                                friendModel.delFriend(uid: authModel.user?.uid ?? "", targetUid: user.uid)
                             } label: {
                                 Label("Delete", systemImage: "trash")
                             }
@@ -59,12 +101,17 @@ struct FriendView: View {
                 }
                 
                 
+                Spacer()
+                
+                
             }.padding(20)
                 .onAppear{
-                    print(authModel.user?.uid)
                     friendModel.getFriendList(uid: authModel.user?.uid ?? "")
                 }
         }
+    }
+    func submit(){
+        friendModel.sendInvitation(uid: authModel.user?.uid ?? "", email: self.email)
     }
 }
 
