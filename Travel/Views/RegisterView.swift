@@ -64,6 +64,7 @@ struct RegisterView: View {
                         .frame(height: 20)
                         .padding(.leading)
                         .offset(x: -10)
+                        .textCase(.lowercase)
                     
                     Rectangle()
                         .frame(width: 350, height: 1)

@@ -33,8 +33,8 @@ class LandmarkManager: NSObject, ObservableObject {
     
     func update(newLandmark: Landmark) {
         self.landmark = newLandmark
-        self.region = MKCoordinateRegion.regionFromLandmark(newLandmark)
         self.isEdit = true
+        self.region = MKCoordinateRegion.regionFromLandmark(newLandmark)
     }
     
     func clear() {

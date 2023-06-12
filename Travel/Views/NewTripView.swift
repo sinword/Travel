@@ -14,13 +14,13 @@ import FirebaseDatabaseUI
 struct NewTripView: View {
     @EnvironmentObject var localSearchService: LocalSearchService
     @EnvironmentObject var designatedLandmark: LandmarkManager
-    @EnvironmentObject var tripManager: TripManager
     @Environment (\.presentationMode) var presentationMode
     @State private var showMapView = false
     @State private var mapSnapshot: UIImage?
     @State var members = ["John", "Jane", "Alice", "Bob", "Sam", "Michele"]
     
     @State private var tripName = ""
+    @State private var tripDestination = ""
     @StateObject var tripTime = TimeManager()
     @StateObject var newTrip = TripModel()
     
@@ -124,6 +124,7 @@ struct NewTripView: View {
             
             Spacer()
         }
+    
     }
         
            
@@ -174,25 +175,17 @@ struct NewTripView: View {
             .padding(.top, 5)
             
         }
-        
     }
     
-    @State private var showAlert = false
-
     var finishButtonView: some View {
         HStack {
             Spacer()
             Button(action: {
-                // Check each item is filled before saving
-                if (tripName == "" || tripTime.time < Date() || designatedLandmark.landmark.name == "") {
-                    showAlert = true
-                }
-                else {
-                    newTrip.update(name: tripName, time: tripTime.time, destination: designatedLandmark.landmark)
-                    tripManager.addTrip(newTrip: newTrip)
-                    tripManager.printInfo()
-                    presentationMode.wrappedValue.dismiss()
-                }
+                // Check each item is filled
+                // Save current trip info to coredata
+                newTrip.update(name: tripName, time: tripTime.time, destination: designatedLandmark.landmark)
+                newTrip.printInfo()
+                presentationMode.wrappedValue.dismiss()
             }) {
                 HStack {
                     Spacer()
@@ -209,17 +202,7 @@ struct NewTripView: View {
             .shadow(radius: 3, x: 0, y: 2)
             Spacer()
         }
-        .alert(isPresented: $showAlert) {
-            Alert(
-                title: Text("警告"),
-                message: Text("請檢查填寫的項目"),
-                dismissButton: .default(Text("確認"))
-            )
-        }
-    }
-    
-    func showAlert(message: String) -> Alert {
-        Alert(title: Text("Alert"), message: Text(message), dismissButton: .default(Text("OK")))
+
     }
     
     func captureMapSnapshot() {

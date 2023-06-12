@@ -87,7 +87,7 @@ struct LoginView: View {
                     .cornerRadius(10)
                     .padding(20)
                     .offset(x: -20)
-                    .alert(isPresented: $showAlert){
+                    .alert(isPresented: !$authModel.isValid){
                         Alert(
                             title: Text("警告"),
                             message: Text(authModel.errorMessage),

@@ -61,6 +61,7 @@ class AuthModel: ObservableObject{
                 self.errorMessage = error!.localizedDescription
             }
             else{
+                self.user = Auth.auth().currentUser
                 self.isLogin = true
             }
         }
@@ -105,12 +106,12 @@ class AuthModel: ObservableObject{
                                     self.isValid = false
                                 }
                                 else{
+                                    let ref = Database.database().reference()
+                                    ref.child("User/\(self.user!.uid)/displayName").setValue(self.nickname)
+                                    ref.child("User/\(self.user!.uid)/email").setValue(self.email)
+                                    ref.child("User/\(self.user!.uid)/photoURL").setValue(url?.absoluteString)
                                     self.isValid = true
                                     self.isSignUp = true
-                                    let reference = Database.database().reference()
-                                    reference.child("User/\(self.user!.uid)/displayName").setValue(self.nickname)
-                                    reference.child("User/\(self.user!.uid)/email").setValue(self.email)
-                                    reference.child("User/\(self.user!.uid)/photoURL").setValue(url?.absoluteString)
                                 }
                             }
                         }
