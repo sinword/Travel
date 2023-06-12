@@ -11,16 +11,14 @@ import SDWebImageSwiftUI
 
 struct InvitationView: View {
     @EnvironmentObject var friendModel : FriendModel
-    @EnvironmentObject var authModel : AuthModel
+    
     var body: some View {
         VStack{
-            Text("好友邀請")
-                .font(.title)
-            if friendModel.invitations.isEmpty{
-                Text("No invitations!")
+            if friendModel.userList.isEmpty{
+                Text("You have no friend!")
             }
             else{
-                List(friendModel.invitations, id: \.self){ user in
+                List(friendModel.userList, id: \.self){ user in
                     HStack{
                         WebImage(url: user.profileURL)
                             .resizable()
@@ -34,17 +32,18 @@ struct InvitationView: View {
                     }
                     .swipeActions(edge: .trailing){
                         Button {
-                            friendModel.delFriendInvitation(uid: authModel.user!.uid ?? "", targetUid: user.uid)
+                            friendModel.getUIDFromMail(email: "Josephchen102345@gmail.com")
                         } label: {
                             Label("Delete", systemImage: "trash")
                         }
                         .tint(.red)
                         
-                      
-                        Button {
-                            friendModel.addFriend(uid: authModel.user!.uid ?? "", targetUid: user.uid)
-                        } label: {
-                            Label("Info", systemImage: "checkmark")
+                        NavigationLink(destination: FriendInfoView().environmentObject(UserModel(uid: user.uid))){
+                            Button {
+                            } label: {
+                                Label("Info", systemImage: "paperplane")
+                            }
+                            
                         }.tint(.blue)
                     }
                 }

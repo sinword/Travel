@@ -17,11 +17,13 @@ prefix func ! (value: Binding<Bool>) -> Binding<Bool> {
 
 struct MainView: View {
     @EnvironmentObject var authModel: AuthModel
+    @EnvironmentObject var tripManager: TripManager
     
     var body: some View {
         if authModel.isLogin{
             TabView {
                 HomeView()
+                    .environmentObject(tripManager)
                     .tabItem {
                         Image(systemName: "house.fill")
                         Text("Home")
@@ -34,7 +36,6 @@ struct MainView: View {
                     }
                 
                 FriendView()
-                    .environmentObject(authModel)
                     .tabItem {
                         Image(systemName: "person.2.fill")
                         Text("People")
@@ -49,8 +50,7 @@ struct MainView: View {
             }
         }
         else{
-            LoginView()
-                .environmentObject(authModel)
+            
         }
     }
 }
@@ -60,6 +60,6 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
-            .environmentObject(authModel)
+            //.environmentObject(authModel)
     }
 }

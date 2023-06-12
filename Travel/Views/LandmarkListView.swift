@@ -34,8 +34,6 @@ struct LandmarkListView: View {
         .padding(.top, 5)
         .frame(height: 250)
     }
-        
-    
 }
 
 struct LandmarkListView_Previews: PreviewProvider {
