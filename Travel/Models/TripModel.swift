@@ -10,7 +10,7 @@ import Firebase
 import FirebaseStorage
 
 class TripModel: ObservableObject, Identifiable {
-    let id: UUID = UUID()
+    var id: UUID = UUID()
     @Published var name: String
     @Published var time: Date
     // var member
@@ -40,6 +40,4 @@ class TripModel: ObservableObject, Identifiable {
         print("Trip destination: \n")
         destination.printInfo()
     }
-    
-    
 }

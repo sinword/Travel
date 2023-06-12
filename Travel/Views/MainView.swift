@@ -23,7 +23,7 @@ struct MainView: View {
         if authModel.isLogin{
             TabView {
                 HomeView()
-                    .environmentObject(TripManager())
+                    .environmentObject(tripManager)
                     .tabItem {
                         Image(systemName: "house.fill")
                         Text("Home")
@@ -50,8 +50,7 @@ struct MainView: View {
             }
         }
         else{
-            LoginView()
-                .environmentObject(authModel)
+            
         }
     }
 }

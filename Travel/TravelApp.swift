@@ -21,6 +21,8 @@ struct TravelApp: App {
     let persistenceController = PersistenceController.shared
     @Environment(\.scenePhase) var scenePhase
     @EnvironmentObject var localSearchService: LocalSearchService
+    @EnvironmentObject var tripManager: TripManager
+    
     init(){
         FirebaseApp.configure()
         /*
@@ -44,6 +46,7 @@ struct TravelApp: App {
                 .environmentObject(LocalSearchService())
                 .environmentObject(LandmarkManager())
                 .environmentObject(AuthModel())
+                .environmentObject(TripManager())
         }
     }
     

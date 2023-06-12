@@ -177,9 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				72E9F40B2A30E2E500375A63 /* LocationManager.swift */,
-				723E3C492A32488800FC6649 /* LandmarkManager.swift */,
 				7258E0312A3397D700CCF163 /* TimeManager.swift */,
 				728A08652A362FB30015EAB7 /* TripManager.swift */,
+				723E3C492A32488800FC6649 /* LandmarkManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";

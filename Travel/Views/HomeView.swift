@@ -12,9 +12,10 @@ struct HomeView: View {
     @EnvironmentObject var localSearchService: LocalSearchService
     @EnvironmentObject var designatedLandmark: LandmarkManager
     @EnvironmentObject var tripManager: TripManager
-    @EnvironmentObject var designatedTrip: TripModel
+    @StateObject var designatedTrip = TripModel()
     static let lemonGreen = Color("ThemeGreen")
-    @State var showDetail = false
+    @State var showNewTripView = false
+    @State var showEditTripView = false
     var dateFormatter: DateFormatter = {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy/MM/dd"
@@ -36,10 +37,10 @@ struct HomeView: View {
 
                 newTripButtonView
                 
-                List(tripManager.trips) { trip in
+                List(tripManager.trips, id: \.id) { trip in
                     NavigationLink(destination: EditTripView()
-                        .environmentObject(TripManager())
-                        .environmentObject(TripModel())
+                        .environmentObject(tripManager)
+                        .environmentObject(trip)
                         .navigationBarHidden(true)) {
                         VStack(alignment: .leading) {
                             Text(trip.name)
@@ -48,12 +49,10 @@ struct HomeView: View {
                             Text(trip.destination.landmark.name)
                                 .opacity(0.5)
                         }
-                        .padding()
-                        .onTapGesture {
-                            designatedTrip.update(trip: trip)
-                        }
+//                        
                     }
                 }
+                
                 .padding(.top, 30)
             
 //                TripListView()
@@ -70,7 +69,7 @@ struct HomeView: View {
             Button(action: {
                 designatedLandmark.clear()
                 localSearchService.clear()
-                showDetail = true
+                showNewTripView = true
             }) {
                 HStack {
                     Image(systemName: "plus")
@@ -89,7 +88,7 @@ struct HomeView: View {
             .cornerRadius(15)
             .shadow(radius: 3, x: 0, y: 2)
             
-            NavigationLink(destination: NewTripView(), isActive: $showDetail) {
+            NavigationLink(destination: NewTripView(), isActive: $showNewTripView) {
                 EmptyView()
             }
             Spacer()
@@ -98,11 +97,11 @@ struct HomeView: View {
     
 }
 
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-            .environmentObject(LocalSearchService())
-            .environmentObject(LandmarkManager())
-    }
-}
+//
+//struct HomeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeView()
+//            .environmentObject(LocalSearchService())
+//            .environmentObject(LandmarkManager())
+//    }
+//}

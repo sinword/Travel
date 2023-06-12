@@ -19,6 +19,7 @@ struct EditTripView: View {
     @State private var mapSnapshot: UIImage?
     @State var members = ["John", "Jane", "Alice", "Bob", "Sam", "Michele"]
     
+    
 //    @State var tripName = ""
 //    @StateObject var tripDestination = LandmarkManager()
 //    @StateObject var tripTime = TimeManager()
@@ -30,9 +31,16 @@ struct EditTripView: View {
 //        _tripDestination = StateObject(wrappedValue: LandmarkManager())
 //        _tripTime = StateObject(wrappedValue: TimeManager())
 //    }
+    
     var body: some View {
         ScrollView {
             VStack() {
+                Button(action: {
+                    print("DESIGNATEDTRIP INFO")
+                    designatedTrip.printInfo()
+                }) {
+                    Text("printinfo")
+                }
                 HStack {
                     Text("Edit Trip")
                         .font(.system(size: 30))
@@ -93,7 +101,6 @@ struct EditTripView: View {
                 .padding(.top, 5)
                 
                 HStack {
-  
                     VStack(alignment: .leading, spacing: 1) {
                         Text("Name: \(designatedTrip.destination.landmark.name)")
                         Text("Distance: \(designatedTrip.destination.landmark.formattedDistance) KM")
@@ -191,7 +198,6 @@ struct EditTripView: View {
                     showAlert = true
                 }
                 else {
-//                    designatedTrip.update(name: tripName, time: tripTime.time, destination: tripDestination.landmark)
                     tripManager.updateTrip(editedTrip: designatedTrip)
                     tripManager.printInfo()
                     presentationMode.wrappedValue.dismiss()
