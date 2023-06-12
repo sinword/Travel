@@ -13,9 +13,9 @@ import CoreLocation
 @MainActor
 class LocalSearchService: ObservableObject {
     @Published var region: MKCoordinateRegion = MKCoordinateRegion.defaultRegion()
-    let locationManager = LocationManager()
+    var locationManager = LocationManager()
     var cancellables = Set<AnyCancellable>()
-    @Published var landmarks: [Landmark] = []
+    @Published var landmarks: [Landmark] = [] // search result
     @Published var landmark: Landmark? // It will be null sometimes
     
     init() {
@@ -43,6 +43,11 @@ class LocalSearchService: ObservableObject {
                 return landmark1.distance < landmark2.distance
             }
         }
+    }
+    
+    func update(locationManager: LocationManager) {
+        region = locationManager.region
+        self.locationManager = locationManager
     }
 
     func clear() {

@@ -12,13 +12,12 @@ struct HomeView: View {
     @EnvironmentObject var localSearchService: LocalSearchService
     @EnvironmentObject var designatedLandmark: LandmarkManager
     @EnvironmentObject var tripManager: TripManager
-    @StateObject var designatedTrip = TripModel()
     static let lemonGreen = Color("ThemeGreen")
     @State var showNewTripView = false
     @State var showEditTripView = false
     var dateFormatter: DateFormatter = {
             let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy/MM/dd"
+            formatter.dateFormat = "yyyy / MM / dd"
             return formatter
         }()
     
@@ -38,10 +37,13 @@ struct HomeView: View {
                 newTripButtonView
                 
                 List(tripManager.trips, id: \.id) { trip in
-                    NavigationLink(destination: EditTripView()
-                        .environmentObject(tripManager)
-                        .environmentObject(trip)
-                        .navigationBarHidden(true)) {
+//                    NavigationLink(destination: EditTripView()
+//                        .environmentObject(tripManager)
+//                        .environmentObject(LandmarkManager())
+//                        .environmentObject(trip)
+//                        .navigationBarHidden(true)) {
+                    NavigationLink(destination: TripNavigationView()
+                        .environmentObject(trip)) {
                         VStack(alignment: .leading) {
                             Text(trip.name)
                             Text(dateFormatter.string(from: trip.time))

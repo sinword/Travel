@@ -28,12 +28,12 @@ struct MainView: View {
                         Image(systemName: "house.fill")
                         Text("Home")
                     }
-                MapView()
-                    .environmentObject(LocalSearchService())
-                    .tabItem {
-                        Image(systemName: "location.fill")
-                        Text("Trip")
-                    }
+//                TripNavigationView()
+//                    .environmentObject(LocalSearchService())
+//                    .tabItem {
+//                        Image(systemName: "location.fill")
+//                        Text("Trip")
+//                    }
                 
                 FriendView()
                     .environmentObject(authModel)

@@ -22,6 +22,12 @@ class TripModel: ObservableObject, Identifiable {
         destination = LandmarkManager()
     }
     
+    init(trip: TripModel) {
+        name = trip.name
+        time = trip.time
+        destination = trip.destination
+    }
+    
     func update(name: String, time: Date, destination: Landmark) {
         self.name = name
         self.time = time
