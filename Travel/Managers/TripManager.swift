@@ -12,10 +12,11 @@ import Firebase
 @MainActor
 class TripManager: NSObject, ObservableObject {
     @Published var trips = [TripModel]()
+    var uid = ""
     
-//    override init() {
-//        trips = []
-//    }
+    override init() {
+      trips = []
+    }
     
     func addTrip(newTrip: TripModel) {
         trips.append(newTrip)
@@ -32,10 +33,11 @@ class TripManager: NSObject, ObservableObject {
         }
     }
 
-    func getAllTrips(authModel: AuthModel) {
+    
+    
+    func getAllTrips(currentUserUID: String) {
         var trip = TripModel()
         let ref = Database.database().reference().child("Trip")
-        let currentUserUID = authModel.user!.uid
         self.trips.removeAll()
         
         ref.observeSingleEvent(of: .value) { snapshot, error in

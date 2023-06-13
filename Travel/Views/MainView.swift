@@ -17,7 +17,7 @@ prefix func ! (value: Binding<Bool>) -> Binding<Bool> {
 
 struct MainView: View {
     @EnvironmentObject var authModel: AuthModel
-    @EnvironmentObject var tripManager: TripManager
+    @StateObject var tripManager = TripManager()
     
     var body: some View {
         if authModel.isLogin{
@@ -51,10 +51,6 @@ struct MainView: View {
                         Image(systemName: "person.crop.circle")
                         Text("Me")
                     }
-            }
-            .onAppear {
-                tripManager.getAllTrips(authModel: authModel)
-                print("Tab View trip update")
             }
         }
         else{

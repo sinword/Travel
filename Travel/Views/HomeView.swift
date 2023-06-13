@@ -59,16 +59,10 @@ struct HomeView: View {
                 .padding(.top, 30)
                 Spacer()
             }
-            
-//                Task {
-//                    do {
-//                        try await tripManager.getAllTrips(authModel: authModel)
-//                        print("Get trip")
-//                    }
-//                    catch {
-//                        print("No trip in DB")
-//                    }
-//                }
+            .onAppear {
+                tripManager.getAllTrips(currentUserUID: authModel.user!.uid)
+                print("Tab View trip update")
+            }
         }
         
     }

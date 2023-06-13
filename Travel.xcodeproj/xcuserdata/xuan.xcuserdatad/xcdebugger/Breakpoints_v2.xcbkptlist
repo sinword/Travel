@@ -643,6 +643,21 @@
                   endingLineNumber = "73"
                   offsetFromSymbolStart = "288">
                </Location>
+               <Location
+                  uuid = "070918F8-7596-4529-8B15-556D43170C39 - 4a15fa535f084b6d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Travel.AuthModel.signInWithEmail() async -&gt; Swift.Bool"
+                  moduleName = "Travel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xuan/Desktop/Program/IOS%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/Travel/Travel/Models/AuthModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "648">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -753,6 +768,21 @@
                   startingLineNumber = "74"
                   endingLineNumber = "74"
                   offsetFromSymbolStart = "316">
+               </Location>
+               <Location
+                  uuid = "827C4F5F-2FDE-4255-A79B-F7D02EA5FF1F - 30e69aff2b1fc8f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Travel.AuthModel.signInWithEmail() async -&gt; Swift.Bool"
+                  moduleName = "Travel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/xuan/Desktop/Program/IOS%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/Travel/Travel/Models/AuthModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "344">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1641,7 +1671,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
-            landmarkName = "body"
+            landmarkName = "dateFormatter"
             landmarkType = "24">
             <Locations>
                <Location
@@ -1767,7 +1797,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
             endingLineNumber = "41"
-            landmarkName = "getUserInfo(uid:status:)"
+            landmarkName = "delFriendInvitation(uid:targetUid:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -1830,7 +1860,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
-            landmarkName = "getUserInfo(uid:status:)"
+            landmarkName = "delFriend(uid:targetUid:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1846,7 +1876,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
             endingLineNumber = "50"
-            landmarkName = "getUIDFromMail(email:)"
+            landmarkName = "addFriend(uid:targetUid:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -1909,7 +1939,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
             endingLineNumber = "51"
-            landmarkName = "getUIDFromMail(email:)"
+            landmarkName = "addFriend(uid:targetUid:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1925,7 +1955,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
             endingLineNumber = "55"
-            landmarkName = "getUIDFromMail(email:)"
+            landmarkName = "addFriend(uid:targetUid:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
