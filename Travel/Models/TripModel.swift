@@ -36,16 +36,16 @@ class TripModel: ObservableObject, Identifiable {
         self.destination.update(newLandmark: destination)
     }
     
-    func uploadTrip(newTrip: TripModel, designatedLandmark: LandmarkManager, authModel: AuthModel) async {
+    func uploadTrip(newTrip: TripModel, designatedLandmark: LandmarkManager, currentUserID: String) async {
         let ref = Database.database().reference()
         do {
             try await ref.child("Trip/\(newTrip.id)/tripName").setValue(newTrip.name)
             try await ref.child("Trip/\(newTrip.id)/time").setValue(newTrip.time.timeIntervalSince1970)
-            try await ref.child("Trip/\(newTrip.id)/detination/destName").setValue(designatedLandmark.landmark.name)
-            try await ref.child("Trip/\(newTrip.id)/detination/distance").setValue(designatedLandmark.landmark.distance)
-            try await ref.child("Trip/\(newTrip.id)/detination/latitude").setValue(designatedLandmark.landmark.coordinate.latitude)
-            try await ref.child("Trip/\(newTrip.id)/detination/longitude").setValue(designatedLandmark.landmark.coordinate.longitude)
-            try await ref.child("Trip/\(newTrip.id)/user").setValue(authModel.user!.uid)
+            try await ref.child("Trip/\(newTrip.id)/destination/destName").setValue(designatedLandmark.landmark.name)
+            try await ref.child("Trip/\(newTrip.id)/destination/distance").setValue(designatedLandmark.landmark.distance)
+            try await ref.child("Trip/\(newTrip.id)/destination/latitude").setValue(designatedLandmark.landmark.coordinate.latitude)
+            try await ref.child("Trip/\(newTrip.id)/destination/longitude").setValue(designatedLandmark.landmark.coordinate.longitude)
+            try await ref.child("Trip/\(newTrip.id)/user").setValue(currentUserID)
             
             print("Trip data uploaded successfully")
         }

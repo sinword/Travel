@@ -38,19 +38,13 @@ struct HomeView: View {
                 newTripButtonView
               
                 List(tripManager.trips, id: \.id) { trip in
-//                    NavigationLink(destination: EditTripView()
-//                        .environmentObject(tripManager)
-//                        .environmentObject(LandmarkManager())
-//                        .environmentObject(trip)
-//                        .navigationBarHidden(true)) {
-//                        .navigationBarHidden(true)) {
                     NavigationLink(destination: TripNavigationView()
                         .environmentObject(trip)) {
                         VStack(alignment: .leading) {
                             Text(trip.name)
                             Text(dateFormatter.string(from: trip.time))
                                 .opacity(0.5)
-                            Text(trip.destination.landmark.name)
+                            Text(trip.destination.landmark.landmarkName)
                                 .opacity(0.5)
                         }
                     }
@@ -93,7 +87,7 @@ struct HomeView: View {
             .cornerRadius(15)
             .shadow(radius: 3, x: 0, y: 2)
             
-            NavigationLink(destination: NewTripView().environmentObject(tripManager), isActive: $showNewTripView) {
+            NavigationLink(destination: NewTripView().environmentObject(tripManager).environmentObject(authModel), isActive: $showNewTripView) {
                 EmptyView()
             }
             Spacer()

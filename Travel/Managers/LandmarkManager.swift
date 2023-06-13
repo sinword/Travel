@@ -47,5 +47,6 @@ class LandmarkManager: NSObject, ObservableObject {
         print("\(self.landmark.id)")
         print("\(self.landmark.name)\n")
         print("\(self.landmark.distance)")
+        print("\(self.landmark.landmarkName)")
     }
 }

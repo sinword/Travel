@@ -190,17 +190,19 @@ struct NewTripView: View {
                 }
                 else {
                     newTrip.update(name: tripName, time: tripTime.time, destination: designatedLandmark.landmark)
-                     tripManager.addTrip(newTrip: newTrip)
+                     // tripManager.addTrip(newTrip: newTrip)
+                    
                     // upload new trip to DB
                     Task {
                         do {
-                            try await newTrip.uploadTrip(newTrip: newTrip, designatedLandmark: designatedLandmark, authModel: AuthModel())
+                            try await newTrip.uploadTrip(newTrip: newTrip, designatedLandmark: designatedLandmark, currentUserID: authModel.user!.uid)
+                            tripManager.getAllTrips(currentUserUID: authModel.user!.uid)
                         }
                         catch {
                             print("Uploading trip data error")
                         }
                     }
-                    
+
                     tripManager.printInfo()
                     presentationMode.wrappedValue.dismiss()
                 }

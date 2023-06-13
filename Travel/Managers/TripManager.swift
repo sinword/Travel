@@ -11,8 +11,7 @@ import Firebase
 
 @MainActor
 class TripManager: NSObject, ObservableObject {
-    @Published var trips = [TripModel]()
-    var uid = ""
+    @Published var trips: [TripModel]
     
     override init() {
       trips = []
@@ -33,10 +32,7 @@ class TripManager: NSObject, ObservableObject {
         }
     }
 
-    
-    
     func getAllTrips(currentUserUID: String) {
-        var trip = TripModel()
         let ref = Database.database().reference().child("Trip")
         self.trips.removeAll()
         
@@ -56,12 +52,18 @@ class TripManager: NSObject, ObservableObject {
                        // User matches, retrieve the trip details
                        let tripName = tripDict["tripName"] as? String ?? ""
                        let timeInterval = tripDict["time"] as? Double ?? 0
-                       let destName = tripDict["destination/destName"] as? String ?? ""
-                       let latitude = tripDict["destination/latitude"] as? Double ?? 0
-                       let longitude = tripDict["destination/longitude"] as? Double ?? 0
-                       let distance = tripDict["destination/distance"] as? Double ?? 0
+                       
+                       let destDict = tripDict["destination"] as? NSDictionary
+                       let destName = destDict?["destName"] as? String ?? ""
+                       let latitude = destDict?["latitude"] as? Double ?? 0
+                       let longitude = destDict?["longitude"] as? Double ?? 0
+                       let distance = destDict?["distance"] as? Double ?? 0
                        
                        // Create trip model or perform further actions
+                       print("getAllTrip printing test:")
+                       print("tripName: \(tripName)")
+                       print("destName: \(destName)")
+                       print("destination latitude: \(latitude)")
                        let trip = TripModel()
                        trip.id = UUID(uuidString: tripSnapshot.key)!
                        trip.name = tripName
@@ -69,6 +71,7 @@ class TripManager: NSObject, ObservableObject {
                        
                        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                        let placemark = MKPlacemark(coordinate: coordinate)
+                    
                        let landmark = Landmark(placemark: placemark, distance: distance, landmarkName: destName)
                        let landmarkManager = LandmarkManager()
                        landmarkManager.update(newLandmark: landmark)
@@ -82,8 +85,6 @@ class TripManager: NSObject, ObservableObject {
                    }
                }
            }
-
-
     }
     
     func copyTrips(trips: [TripModel]) {
