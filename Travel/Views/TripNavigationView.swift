@@ -12,7 +12,7 @@ import CoreLocation
 struct TripNavigationView: View {
     @EnvironmentObject var localSearchService: LocalSearchService
     @EnvironmentObject var desginatedTrip: TripModel
-//    @EnvironmentObject var desginatedLandmark: LandmarkManager
+//    @EnvironmentObject var desginatedLandmark: LandmarkManager    
     @Environment (\.colorScheme) var colorScheme
     @Environment (\.presentationMode) var presentationMode
     @State private var directions: [String] = []

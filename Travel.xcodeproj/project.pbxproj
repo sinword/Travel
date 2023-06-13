@@ -38,12 +38,9 @@
 		723E3C4A2A32488800FC6649 /* LandmarkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723E3C492A32488800FC6649 /* LandmarkManager.swift */; };
 		7258E0302A3323AC00CCF163 /* BoolEnvironmentVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7258E02F2A3323AC00CCF163 /* BoolEnvironmentVariable.swift */; };
 		7258E0322A3397D700CCF163 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7258E0312A3397D700CCF163 /* TimeManager.swift */; };
+		727DA7AE2A38C6DF00976758 /* textFolder in Resources */ = {isa = PBXBuildFile; fileRef = 727DA7AD2A38C6DF00976758 /* textFolder */; };
 		728A08642A36176F0015EAB7 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A08632A36176F0015EAB7 /* TripModel.swift */; };
 		728A08662A362FB30015EAB7 /* TripManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A08652A362FB30015EAB7 /* TripManager.swift */; };
-		72E952B62A3749D000B5F81F /* 關於我們.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E952B22A3749D000B5F81F /* 關於我們.txt */; };
-		72E952B72A3749D000B5F81F /* 版本紀錄.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E952B32A3749D000B5F81F /* 版本紀錄.txt */; };
-		72E952B82A3749D000B5F81F /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E952B42A3749D000B5F81F /* test.txt */; };
-		72E952B92A3749D000B5F81F /* 常見問題.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E952B52A3749D000B5F81F /* 常見問題.txt */; };
 		72E952BB2A374C6B00B5F81F /* InvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E952BA2A374C6B00B5F81F /* InvitationView.swift */; };
 		72E952BD2A374CC500B5F81F /* ChangeInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E952BC2A374CC500B5F81F /* ChangeInfoView.swift */; };
 		72E952BF2A374CDF00B5F81F /* TextFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E952BE2A374CDF00B5F81F /* TextFileView.swift */; };
@@ -80,12 +77,9 @@
 		723E3C492A32488800FC6649 /* LandmarkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkManager.swift; sourceTree = "<group>"; };
 		7258E02F2A3323AC00CCF163 /* BoolEnvironmentVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolEnvironmentVariable.swift; sourceTree = "<group>"; };
 		7258E0312A3397D700CCF163 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
+		727DA7AD2A38C6DF00976758 /* textFolder */ = {isa = PBXFileReference; lastKnownFileType = folder; path = textFolder; sourceTree = "<group>"; };
 		728A08632A36176F0015EAB7 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
 		728A08652A362FB30015EAB7 /* TripManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManager.swift; sourceTree = "<group>"; };
-		72E952B22A3749D000B5F81F /* 關於我們.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "關於我們.txt"; sourceTree = "<group>"; };
-		72E952B32A3749D000B5F81F /* 版本紀錄.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "版本紀錄.txt"; sourceTree = "<group>"; };
-		72E952B42A3749D000B5F81F /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
-		72E952B52A3749D000B5F81F /* 常見問題.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "常見問題.txt"; sourceTree = "<group>"; };
 		72E952BA2A374C6B00B5F81F /* InvitationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationView.swift; sourceTree = "<group>"; };
 		72E952BC2A374CC500B5F81F /* ChangeInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeInfoView.swift; sourceTree = "<group>"; };
 		72E952BE2A374CDF00B5F81F /* TextFileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFileView.swift; sourceTree = "<group>"; };
@@ -150,8 +144,8 @@
 		720451C92A2FA576002A8A0E /* Travel */ = {
 			isa = PBXGroup;
 			children = (
+				727DA7AD2A38C6DF00976758 /* textFolder */,
 				133F39FB2A33A68100F5E747 /* GoogleService-Info.plist */,
-				72E952B12A3749D000B5F81F /* textFolder */,
 				72E9F4152A31046A00375A63 /* Views */,
 				72E9F4122A30F7E000375A63 /* Models */,
 				72E9F4062A30DCB400375A63 /* Info.plist */,
@@ -173,17 +167,6 @@
 				720451D12A2FA577002A8A0E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		72E952B12A3749D000B5F81F /* textFolder */ = {
-			isa = PBXGroup;
-			children = (
-				72E952B22A3749D000B5F81F /* 關於我們.txt */,
-				72E952B32A3749D000B5F81F /* 版本紀錄.txt */,
-				72E952B42A3749D000B5F81F /* test.txt */,
-				72E952B52A3749D000B5F81F /* 常見問題.txt */,
-			);
-			path = textFolder;
 			sourceTree = "<group>";
 		};
 		72E9F4072A30E26A00375A63 /* Services */ = {
@@ -325,13 +308,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72E952B92A3749D000B5F81F /* 常見問題.txt in Resources */,
-				72E952B62A3749D000B5F81F /* 關於我們.txt in Resources */,
-				72E952B72A3749D000B5F81F /* 版本紀錄.txt in Resources */,
 				720451D22A2FA577002A8A0E /* Preview Assets.xcassets in Resources */,
 				720451CF2A2FA577002A8A0E /* Assets.xcassets in Resources */,
-				72E952B82A3749D000B5F81F /* test.txt in Resources */,
 				133F39FC2A33A68100F5E747 /* GoogleService-Info.plist in Resources */,
+				727DA7AE2A38C6DF00976758 /* textFolder in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,7 +496,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "NTUST-iOS.Travel";
+				PRODUCT_BUNDLE_IDENTIFIER = NTUST.Travel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -547,7 +527,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "NTUST-iOS.Travel";
+				PRODUCT_BUNDLE_IDENTIFIER = NTUST.Travel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

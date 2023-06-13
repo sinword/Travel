@@ -34,14 +34,14 @@ struct FriendView: View {
                         ){
                              Image(systemName: "envelope.badge")
                                 .resizable()
-                                .frame(width: 40, height: 30)
+                                .frame(width: 30, height: 30)
                             }
                     }
                     
                     Button(action: {self.showInputAlert = true}){
                         Image(systemName: "person.fill.badge.plus")
                             .resizable()
-                            .frame(width: 40, height: 30)
+                            .frame(width: 30, height: 30)
                     }
                     .alert(isPresented: $friendModel.showNotify){
                         Alert(
