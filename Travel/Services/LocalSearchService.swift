@@ -36,7 +36,7 @@ class LocalSearchService: ObservableObject {
                 self.landmarks = mapItems.map {
                     let destinationLocation = CLLocation(latitude: $0.placemark.coordinate.latitude, longitude: $0.placemark.coordinate.longitude)
                     let distance = self.calculateDistance(from: sourceLocation, to: destinationLocation)
-                    return Landmark(placemark: $0.placemark, distance: distance)
+                    return Landmark(placemark: $0.placemark, distance: distance, landmarkName: $0.name ?? "")
                 }
             }
             self.landmarks.sort { (landmark1, landmark2) -> Bool in

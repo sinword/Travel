@@ -7,13 +7,15 @@
 
 import Foundation
 import MapKit
+import Firebase
 
+@MainActor
 class TripManager: NSObject, ObservableObject {
-    @Published var trips: [TripModel]
+    @Published var trips = [TripModel]()
     
-    override init() {
-        trips = []
-    }
+//    override init() {
+//        trips = []
+//    }
     
     func addTrip(newTrip: TripModel) {
         trips.append(newTrip)
@@ -28,6 +30,58 @@ class TripManager: NSObject, ObservableObject {
                 break
             }
         }
+    }
+
+    func getAllTrips(authModel: AuthModel) {
+        var trip = TripModel()
+        let ref = Database.database().reference().child("Trip")
+        let currentUserUID = authModel.user!.uid
+        self.trips.removeAll()
+        
+        ref.observeSingleEvent(of: .value) { snapshot, error in
+               guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
+                   print("Failed to retrieve trips")
+                   return
+               }
+               
+               for tripSnapshot in snapshot {
+                   guard let tripDict = tripSnapshot.value as? NSDictionary,
+                         let userUID = tripDict["user"] as? String else {
+                       continue
+                   }
+                   
+                   if userUID == currentUserUID {
+                       // User matches, retrieve the trip details
+                       let tripName = tripDict["tripName"] as? String ?? ""
+                       let timeInterval = tripDict["time"] as? Double ?? 0
+                       let destName = tripDict["destination/destName"] as? String ?? ""
+                       let latitude = tripDict["destination/latitude"] as? Double ?? 0
+                       let longitude = tripDict["destination/longitude"] as? Double ?? 0
+                       let distance = tripDict["destination/distance"] as? Double ?? 0
+                       
+                       // Create trip model or perform further actions
+                       let trip = TripModel()
+                       trip.id = UUID(uuidString: tripSnapshot.key)!
+                       trip.name = tripName
+                       trip.time = Date(timeIntervalSince1970: timeInterval)
+                       
+                       let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                       let placemark = MKPlacemark(coordinate: coordinate)
+                       let landmark = Landmark(placemark: placemark, distance: distance, landmarkName: destName)
+                       let landmarkManager = LandmarkManager()
+                       landmarkManager.update(newLandmark: landmark)
+                       
+                       trip.destination = landmarkManager
+                       self.trips.append(trip)
+                       
+                       // Do something with the trip
+                       print("Found trip: \(trip.id)")
+                       trip.printInfo()
+                   }
+               }
+           }
+
+
     }
     
     func copyTrips(trips: [TripModel]) {

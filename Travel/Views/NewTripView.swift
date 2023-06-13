@@ -12,9 +12,11 @@ import FirebaseDatabase
 import FirebaseDatabaseUI
 
 struct NewTripView: View {
+    @EnvironmentObject var authModel: AuthModel
     @EnvironmentObject var localSearchService: LocalSearchService
     @EnvironmentObject var designatedLandmark: LandmarkManager
     @EnvironmentObject var tripManager: TripManager
+    
     @Environment (\.presentationMode) var presentationMode
     @State private var showMapView = false
     @State private var mapSnapshot: UIImage?
@@ -24,7 +26,6 @@ struct NewTripView: View {
     @StateObject var tripTime = TimeManager()
     @StateObject var newTrip = TripModel()
     
-    // private let database = Database.database().reference()
 
     var body: some View {
         ScrollView {
@@ -118,7 +119,7 @@ struct NewTripView: View {
                     .padding(.leading, 40)
                     .padding(.trailing, 40)
                 
-                finishButtonView
+                saveButtonView
                     .padding(.top, 15)
             }
             
@@ -179,7 +180,7 @@ struct NewTripView: View {
     
     @State private var showAlert = false
 
-    var finishButtonView: some View {
+    var saveButtonView: some View {
         HStack {
             Spacer()
             Button(action: {
@@ -189,14 +190,24 @@ struct NewTripView: View {
                 }
                 else {
                     newTrip.update(name: tripName, time: tripTime.time, destination: designatedLandmark.landmark)
-                    tripManager.addTrip(newTrip: newTrip)
+                     tripManager.addTrip(newTrip: newTrip)
+                    // upload new trip to DB
+                    Task {
+                        do {
+                            try await newTrip.uploadTrip(newTrip: newTrip, designatedLandmark: designatedLandmark, authModel: AuthModel())
+                        }
+                        catch {
+                            print("Uploading trip data error")
+                        }
+                    }
+                    
                     tripManager.printInfo()
                     presentationMode.wrappedValue.dismiss()
                 }
             }) {
                 HStack {
                     Spacer()
-                    Text("Finish")
+                    Text("Save")
                         .font(.system(size: 25))
                         .fontWeight(.semibold)
                         .foregroundColor(.black)

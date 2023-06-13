@@ -9,12 +9,14 @@ import Foundation
 import Firebase
 import FirebaseStorage
 
+@MainActor
 class TripModel: ObservableObject, Identifiable {
     var id: UUID = UUID()
     @Published var name: String
     @Published var time: Date
     // var member
     @Published var destination: LandmarkManager
+    
     
     init() {
         name = ""
@@ -33,6 +35,25 @@ class TripModel: ObservableObject, Identifiable {
         self.time = time
         self.destination.update(newLandmark: destination)
     }
+    
+    func uploadTrip(newTrip: TripModel, designatedLandmark: LandmarkManager, authModel: AuthModel) async {
+        let ref = Database.database().reference()
+        do {
+            try await ref.child("Trip/\(newTrip.id)/tripName").setValue(newTrip.name)
+            try await ref.child("Trip/\(newTrip.id)/time").setValue(newTrip.time.timeIntervalSince1970)
+            try await ref.child("Trip/\(newTrip.id)/detination/destName").setValue(designatedLandmark.landmark.name)
+            try await ref.child("Trip/\(newTrip.id)/detination/distance").setValue(designatedLandmark.landmark.distance)
+            try await ref.child("Trip/\(newTrip.id)/detination/latitude").setValue(designatedLandmark.landmark.coordinate.latitude)
+            try await ref.child("Trip/\(newTrip.id)/detination/longitude").setValue(designatedLandmark.landmark.coordinate.longitude)
+            try await ref.child("Trip/\(newTrip.id)/user").setValue(authModel.user!.uid)
+            
+            print("Trip data uploaded successfully")
+        }
+        catch {
+            print("Error uploading trip data")
+        }
+    }
+    
     
     func update(trip: TripModel) {
         self.name = trip.name

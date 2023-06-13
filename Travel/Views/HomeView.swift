@@ -9,20 +9,22 @@ import SwiftUI
 import MapKit
 
 struct HomeView: View {
+    @EnvironmentObject var authModel: AuthModel
     @EnvironmentObject var localSearchService: LocalSearchService
     @EnvironmentObject var designatedLandmark: LandmarkManager
     @EnvironmentObject var tripManager: TripManager
     static let lemonGreen = Color("ThemeGreen")
     @State var showNewTripView = false
     @State var showEditTripView = false
+    
     var dateFormatter: DateFormatter = {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy / MM / dd"
-            return formatter
-        }()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy / MM / dd"
+        return formatter
+    }()
+    
     
     var body: some View {
-        
         NavigationView {
             VStack(alignment: .leading) {
                 HStack {
@@ -33,14 +35,14 @@ struct HomeView: View {
                     Spacer()
                 }
                 .padding(.top, 30)
-
                 newTripButtonView
-                
+              
                 List(tripManager.trips, id: \.id) { trip in
 //                    NavigationLink(destination: EditTripView()
 //                        .environmentObject(tripManager)
 //                        .environmentObject(LandmarkManager())
 //                        .environmentObject(trip)
+//                        .navigationBarHidden(true)) {
 //                        .navigationBarHidden(true)) {
                     NavigationLink(destination: TripNavigationView()
                         .environmentObject(trip)) {
@@ -57,9 +59,20 @@ struct HomeView: View {
                 .padding(.top, 30)
                 Spacer()
             }
-        }
             
+//                Task {
+//                    do {
+//                        try await tripManager.getAllTrips(authModel: authModel)
+//                        print("Get trip")
+//                    }
+//                    catch {
+//                        print("No trip in DB")
+//                    }
+//                }
+        }
+        
     }
+    
     
     var newTripButtonView: some View {
         HStack {
@@ -86,7 +99,7 @@ struct HomeView: View {
             .cornerRadius(15)
             .shadow(radius: 3, x: 0, y: 2)
             
-            NavigationLink(destination: NewTripView(), isActive: $showNewTripView) {
+            NavigationLink(destination: NewTripView().environmentObject(tripManager), isActive: $showNewTripView) {
                 EmptyView()
             }
             Spacer()

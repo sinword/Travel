@@ -23,9 +23,8 @@ class LandmarkManager: NSObject, ObservableObject {
         self.region = region
         super.init()
     }
-    
     override init() {
-        self.landmark = Landmark(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0)), distance: CLLocationDistance(0))
+        self.landmark = Landmark(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0)), distance: CLLocationDistance(0), landmarkName: "")
         self.isEdit = false
         region = MKCoordinateRegion.defaultRegion()
         super.init()
@@ -38,7 +37,7 @@ class LandmarkManager: NSObject, ObservableObject {
     }
     
     func clear() {
-        self.landmark = Landmark(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0)), distance: CLLocationDistance(0))
+        self.landmark = Landmark(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 0, longitude: 0)), distance: CLLocationDistance(0), landmarkName: "")
         self.isEdit = false
         region = MKCoordinateRegion.defaultRegion()
     }

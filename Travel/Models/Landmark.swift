@@ -12,6 +12,7 @@ struct Landmark: Identifiable, Hashable {
     var id = UUID()
     var placemark: MKPlacemark
     var distance: CLLocationDistance
+    var landmarkName: String
     
     var name: String {
         self.placemark.name ?? ""

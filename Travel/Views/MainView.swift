@@ -24,10 +24,13 @@ struct MainView: View {
             TabView {
                 HomeView()
                     .environmentObject(tripManager)
+                    .environmentObject(authModel)
                     .tabItem {
                         Image(systemName: "house.fill")
                         Text("Home")
                     }
+                    
+
 //                TripNavigationView()
 //                    .environmentObject(LocalSearchService())
 //                    .tabItem {
@@ -49,12 +52,18 @@ struct MainView: View {
                         Text("Me")
                     }
             }
+            .onAppear {
+                tripManager.getAllTrips(authModel: authModel)
+                print("Tab View trip update")
+            }
         }
         else{
             LoginView()
                 .environmentObject(authModel)
+            
         }
     }
+    
 }
 
 //let authModel = AuthModel()
