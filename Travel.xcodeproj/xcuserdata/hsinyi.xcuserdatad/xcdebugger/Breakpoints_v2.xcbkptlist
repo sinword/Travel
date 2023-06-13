@@ -84,5 +84,181 @@
             landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A9984DD-9E1F-4380-A663-BA0ACC57D29E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Travel/Views/TripNavigationView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "makeUIView(context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "624CDC46-69B6-4902-94F1-E3F3FD837A4F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Travel/Views/TripNavigationView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "makeUIView(context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "399091E6-B55C-4FB4-A399-E9AAE62CDC49"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Travel/Views/TripNavigationView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "makeUIView(context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C1B60ADA-F2C4-4B08-8BFF-6CDB00FC4E4B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Travel/Views/TripNavigationView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "makeUIView(context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E9E58AEA-A6C9-436B-B320-685AF88D0BD1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Travel/Views/TripNavigationView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "makeUIView(context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3432FB1-C094-4E2A-A543-4AC8D1B76B65"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Travel/Views/TripNavigationView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "makeUIView(context:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D3432FB1-C094-4E2A-A543-4AC8D1B76B65 - 32c24cdf58e0801f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Travel.TripNavigationView.MapRepresentableView.makeUIView(context: SwiftUI.UIViewRepresentableContext&lt;Travel.TripNavigationView.MapRepresentableView&gt;) -&gt; __C.MKMapView"
+                  moduleName = "Travel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hsinyi/Desktop/Travel/Travel/Views/TripNavigationView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "2248">
+               </Location>
+               <Location
+                  uuid = "D3432FB1-C094-4E2A-A543-4AC8D1B76B65 - 32c24cdf58e0803e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Travel.TripNavigationView.MapRepresentableView.makeUIView(context: SwiftUI.UIViewRepresentableContext&lt;Travel.TripNavigationView.MapRepresentableView&gt;) -&gt; __C.MKMapView"
+                  moduleName = "Travel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hsinyi/Desktop/Travel/Travel/Views/TripNavigationView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "2492">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0200AF05-157E-49C5-9711-DD7BA7B1F00A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Travel/Models/AuthModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "uploadImage()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0200AF05-157E-49C5-9711-DD7BA7B1F00A - b46b434a6c371737"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for Travel.AuthModel.uploadImage() async -&gt; Foundation.URL"
+                  moduleName = "Travel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hsinyi/Desktop/Travel/Travel/Models/AuthModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "252">
+               </Location>
+               <Location
+                  uuid = "0200AF05-157E-49C5-9711-DD7BA7B1F00A - 984397ca8f8db334"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for Travel.AuthModel.uploadImage() async -&gt; Foundation.URL"
+                  moduleName = "Travel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hsinyi/Desktop/Travel/Travel/Models/AuthModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "252">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

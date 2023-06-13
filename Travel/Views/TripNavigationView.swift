@@ -20,7 +20,7 @@ struct TripNavigationView: View {
     
     var body: some View {
         VStack {
-            MapRepresentableView(directions: $directions)
+            MapRepresentableView(directions: $directions).environmentObject(desginatedTrip)
             
             Button(action: {
                 self.showDirections.toggle()
@@ -36,7 +36,7 @@ struct TripNavigationView: View {
                     .fontWeight(.bold)
                     .padding()
             }
-            
+            // show directions
             List {
                 ForEach(0..<self.directions.count, id: \.self) { index in
                     Text(self.directions[index])
@@ -55,7 +55,6 @@ struct TripNavigationView: View {
     
     struct MapRepresentableView: UIViewRepresentable {
         @EnvironmentObject var localSearchService: LocalSearchService
-//        @EnvironmentObject var desginatedLandmark: LandmarkManager
         @EnvironmentObject var designatedTrip: TripModel
         typealias UIViewType = MKMapView
         
@@ -73,6 +72,11 @@ struct TripNavigationView: View {
             mapView.userTrackingMode = .follow
             let source = MKPlacemark(coordinate: mapView.userLocation.coordinate)
             let destination = MKPlacemark(coordinate: designatedTrip.destination.landmark.coordinate)
+            print("DEBUGGING:")
+            designatedTrip.printInfo()
+            print("Destination coordinate")
+            print(destination.coordinate.latitude)
+            print(destination.coordinate.longitude)
             
             
             let request = MKDirections.Request()
@@ -82,6 +86,7 @@ struct TripNavigationView: View {
             request.transportType = .walking
             
             let directions = MKDirections(request: request)
+            
             directions.calculate { response, error in
                 guard let route = response?.routes.first else { return }
                 let annotation = MKPointAnnotation()
@@ -97,6 +102,7 @@ struct TripNavigationView: View {
         }
         
         func updateUIView(_ uiView: MKMapView, context: Context) {
+            
         }
         
         class MapViewCoordinator: NSObject, MKMapViewDelegate {

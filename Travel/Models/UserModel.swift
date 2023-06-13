@@ -9,6 +9,7 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 import FirebaseStorage
+import UIKit
 
 class UserModel: ObservableObject{
     @Published var user: UserObject? = nil
