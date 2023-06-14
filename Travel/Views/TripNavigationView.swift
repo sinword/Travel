@@ -20,8 +20,8 @@ struct TripNavigationView: View {
     
     var body: some View {
         VStack {
-            MapRepresentableView(directions: $directions).environmentObject(desginatedTrip)
-            
+            MapRepresentableView(directions: $directions ).environmentObject(desginatedTrip)
+           
             Button(action: {
                 self.showDirections.toggle()
             }, label: {
@@ -70,36 +70,35 @@ struct TripNavigationView: View {
             mapView.setRegion(localSearchService.region, animated: true)
             mapView.showsUserLocation = true
             mapView.userTrackingMode = .follow
-            let source = MKPlacemark(coordinate: mapView.userLocation.coordinate)
-            let destination = MKPlacemark(coordinate: designatedTrip.destination.landmark.coordinate)
-            print("DEBUGGING:")
-            designatedTrip.printInfo()
-            print("Destination coordinate")
-            print(destination.coordinate.latitude)
-            print(destination.coordinate.longitude)
-            
-            
-            let request = MKDirections.Request()
-                //from user current location to destination
-            request.source = MKMapItem(placemark: source)
-            request.destination = MKMapItem(placemark: destination)
-            request.transportType = .walking
-            
-            let directions = MKDirections(request: request)
-            
-            directions.calculate { response, error in
-                guard let route = response?.routes.first else { return }
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = destination.coordinate
-                annotation.title = ""
-                mapView.addAnnotation(annotation)
-                mapView.addOverlay(route.polyline)
-                mapView.setVisibleMapRect(route.polyline.boundingMapRect, edgePadding: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20), animated: true)
-                self.directions = route.steps.map { $0.instructions }.filter { !$0.isEmpty }
+
+            Task {
+                let source = MKPlacemark(coordinate: mapView.userLocation.coordinate)
+                let destination = MKPlacemark(coordinate: designatedTrip.destination.landmark.coordinate)
+
+                let request = MKDirections.Request()
+                request.source = MKMapItem(placemark: source)
+                request.destination = MKMapItem(placemark: destination)
+                request.transportType = .walking
+
+                let directions = MKDirections(request: request)
+
+                directions.calculate { response, error in
+                    guard let route = response?.routes.first else { return }
+
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = destination.coordinate
+                    annotation.title = ""
+                    mapView.addAnnotation(annotation)
+                    mapView.addOverlay(route.polyline)
+                    mapView.setVisibleMapRect(route.polyline.boundingMapRect, edgePadding: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20), animated: true)
+                    self.directions = route.steps.map { $0.instructions }.filter { !$0.isEmpty }
+                }
             }
-            
+
             return mapView
         }
+        
+        
         
         func updateUIView(_ uiView: MKMapView, context: Context) {
             

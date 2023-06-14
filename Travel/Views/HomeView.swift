@@ -23,7 +23,6 @@ struct HomeView: View {
         return formatter
     }()
     
-    
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
